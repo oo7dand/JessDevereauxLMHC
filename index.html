@@ -9,78 +9,389 @@
 
   <style>
     :root{
-      --bg:#fbfbfb;
+      --bg:#f4f7ff;           /* light blue background */
+      --bg-soft:#e5efff;      /* soft panel background */
       --card:#ffffff;
       --muted:#6b7280;
-      --accent:#1366ff;
-      --radius:14px;
+      --accent:#2563eb;       /* primary blue */
+      --accent-soft:#dbeafe;  /* pale blue */
+      --radius:16px;
       --max-width:1100px;
       font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
       color:#0f172a;
     }
-    *{box-sizing:border-box}
+
+    *{box-sizing:border-box;}
     body{
       margin:0;
-      background:linear-gradient(180deg, #f7f9fc 0%, var(--bg) 40%);
+      background:radial-gradient(circle at top, #e0ebff 0%, var(--bg) 45%, #f9fbff 100%);
       padding:32px 20px;
-      line-height:1.45;
+      line-height:1.5;
       -webkit-font-smoothing:antialiased;
     }
-    .wrap{width:100%;max-width:var(--max-width);margin:0 auto;}
+
+    .wrap{
+      width:100%;
+      max-width:var(--max-width);
+      margin:0 auto;
+    }
+
+    /* HEADER */
     header{
-      display:flex;justify-content:space-between;align-items:center;margin-bottom:28px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:28px;
     }
-    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;}
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      color:inherit;
+    }
     .logo{
-      width:54px;height:54px;border-radius:12px;
-      background:linear-gradient(135deg,var(--accent),#4ab3ff);
-      display:flex;align-items:center;justify-content:center;
-      color:white;font-weight:700;font-size:18px;
-      box-shadow:0 6px 18px rgba(19,102,255,0.12);
+      width:54px;
+      height:54px;
+      border-radius:15px;
+      background:linear-gradient(135deg,var(--accent),#38bdf8);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-weight:800;
+      font-size:18px;
+      box-shadow:0 8px 22px rgba(37,99,235,0.25);
     }
-    nav a{margin-left:18px;color:var(--muted);text-decoration:none;font-weight:600;font-size:15px}
+    .brand-text-title{
+      font-weight:800;
+      font-size:18px;
+    }
+    .brand-text-sub{
+      font-size:13px;
+      color:var(--muted);
+    }
+    nav a{
+      margin-left:18px;
+      color:var(--muted);
+      text-decoration:none;
+      font-weight:600;
+      font-size:15px;
+    }
 
+    /* HERO LAYOUT */
     .hero{
-      display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-bottom:36px;
+      display:grid;
+      grid-template-columns: minmax(0,1.4fr) minmax(0,1fr);
+      gap:28px;
+      align-items:stretch;
+      margin-bottom:40px;
     }
-    .hero-card{
-      background:var(--card);padding:28px;border-radius:var(--radius);
-      box-shadow:0 6px 30px rgba(15,23,42,0.06);
-    }
-    .eyebrow{color:var(--accent);font-weight:700;margin-bottom:8px;font-size:13px}
-    h1{margin:0 0 12px 0;font-size:28px;line-height:1.15}
-    .lead{color:var(--muted);margin:0 0 18px 0}
-    .cta-row{display:flex;gap:12px}
-    .btn{
-      padding:12px 18px;border-radius:10px;border:0;cursor:pointer;font-weight:700;
-    }
-    .btn-primary{background:var(--accent);color:white}
-    .btn-ghost{background:transparent;border:1px solid rgba(15,23,42,0.06);color:var(--accent)}
 
-    .aside{display:flex;flex-direction:column;gap:14px;}
-    .photo{border-radius:12px;height:260px;overflow:hidden;background:#eee;}
-    .photo img{width:100%;height:100%;object-fit:cover}
+    .hero-card{
+      background:var(--card);
+      padding:28px 26px;
+      border-radius:var(--radius);
+      box-shadow:0 10px 30px rgba(15,23,42,0.12);
+      border:1px solid rgba(148,163,184,0.25);
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:4px 10px;
+      border-radius:999px;
+      background:var(--accent-soft);
+      color:#1d4ed8;
+      font-weight:600;
+      font-size:12px;
+      margin-bottom:10px;
+    }
+    .eyebrow-dot{
+      width:6px;
+      height:6px;
+      border-radius:999px;
+      background:#1d4ed8;
+    }
+
+    h1{
+      margin:0 0 12px 0;
+      font-size:28px;
+      line-height:1.15;
+      color:#0f172a;
+    }
+    .lead{
+      margin:0 0 18px 0;
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .pill-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-bottom:16px;
+    }
+    .pill{
+      padding:5px 10px;
+      border-radius:999px;
+      background:#eff6ff;
+      color:#1d4ed8;
+      font-size:12px;
+      font-weight:600;
+    }
+
+    .cta-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:18px;
+    }
+    .btn{
+      padding:12px 18px;
+      border-radius:999px;
+      border:0;
+      cursor:pointer;
+      font-weight:700;
+      font-size:14px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      transition:transform 0.08s ease, box-shadow 0.08s ease, background 0.15s ease;
+    }
+    .btn-primary{
+      background:var(--accent);
+      color:white;
+      box-shadow:0 8px 22px rgba(37,99,235,0.35);
+    }
+    .btn-primary:hover{
+      transform:translateY(-1px);
+      box-shadow:0 12px 30px rgba(37,99,235,0.45);
+    }
+    .btn-ghost{
+      background:rgba(255,255,255,0.7);
+      border:1px solid rgba(148,163,184,0.55);
+      color:#1d4ed8;
+    }
+    .btn-ghost:hover{
+      background:#eff6ff;
+    }
+
+    .stat-grid{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:6px;
+    }
+    .stat{
+      flex:1 1 90px;
+      background:#eff6ff;
+      border-radius:12px;
+      padding:10px;
+      text-align:left;
+    }
+    .stat strong{
+      display:block;
+      font-size:17px;
+    }
+    .stat span{
+      font-size:12px;
+      color:var(--muted);
+    }
+
+    /* ASIDE (PHOTO + CONTACT) */
+    .aside{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+
+    .photo-card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:10px;
+      box-shadow:0 10px 26px rgba(15,23,42,0.12);
+      border:1px solid rgba(148,163,184,0.25);
+    }
+
+    .photo-frame{
+      border-radius:14px;
+      background:var(--accent-soft);
+      padding:6px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    /* Key change: show full image */
+    .photo-frame img{
+      max-width:100%;
+      height:auto;
+      object-fit:contain;   /* don't crop */
+      display:block;
+      border-radius:10px;
+    }
+
+    .photo-caption{
+      margin-top:8px;
+      font-size:12px;
+      color:var(--muted);
+      text-align:center;
+    }
 
     .contact-card{
-      background:linear-gradient(180deg, rgba(19,102,255,0.04), rgba(19,102,255,0.01));
-      padding:14px;border-radius:10px;
+      background:linear-gradient(140deg,#dbeafe 0%,#e0f2fe 50%,#ffffff 100%);
+      padding:14px 16px 16px;
+      border-radius:var(--radius);
+      border:1px solid rgba(148,163,184,0.45);
+      box-shadow:0 8px 24px rgba(15,23,42,0.15);
+    }
+    .contact-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:8px;
+      margin-bottom:10px;
+    }
+    .contact-title{
+      font-weight:700;
+      font-size:15px;
+    }
+    .contact-sub{
+      font-size:12px;
+      color:var(--muted);
     }
 
-    label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}
-    input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef;background:white;font-size:14px}
-    textarea{min-height:96px}
-    .muted-inline{color:var(--muted);font-size:13px}
+    label{
+      font-size:12px;
+      color:var(--muted);
+      display:block;
+      margin-bottom:4px;
+    }
+    input,textarea{
+      width:100%;
+      padding:9px 10px;
+      border-radius:10px;
+      border:1px solid rgba(148,163,184,0.7);
+      background:#ffffff;
+      font-size:14px;
+      font-family:inherit;
+    }
+    textarea{
+      min-height:90px;
+      resize:vertical;
+    }
+    .muted-inline{
+      font-size:12px;
+      color:var(--muted);
+    }
 
-    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:26px}
-    .service{background:#fff;padding:18px;border-radius:12px;box-shadow:0 6px 22px rgba(12,18,35,0.03)}
-    .service h3{margin:0 0 8px}
+    /* MAIN SECTIONS */
+    .two-col{
+      display:grid;
+      grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+      gap:22px;
+      margin-bottom:32px;
+    }
+    h2{
+      margin:0;
+      font-size:20px;
+      color:#0f172a;
+    }
 
-    footer{margin-top:28px;padding:18px 12px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;}
+    .service-list{
+      margin-top:12px;
+      display:grid;
+      gap:12px;
+    }
+    .service{
+      background:var(--card);
+      padding:16px 16px 14px;
+      border-radius:14px;
+      box-shadow:0 8px 18px rgba(15,23,42,0.06);
+      border:1px solid rgba(203,213,225,0.7);
+    }
+    .service h3{
+      margin:0 0 6px 0;
+      font-size:15px;
+    }
+    .service p{
+      margin:0;
+      font-size:13px;
+      color:var(--muted);
+    }
 
+    .about-card{
+      margin-top:12px;
+      background:var(--card);
+      padding:16px;
+      border-radius:14px;
+      border:1px solid rgba(203,213,225,0.7);
+      box-shadow:0 8px 18px rgba(15,23,42,0.06);
+      font-size:14px;
+      color:var(--muted);
+    }
+    .about-card p{
+      margin:0 0 8px 0;
+    }
+
+    .note-pill{
+      display:inline-block;
+      margin-top:6px;
+      padding:4px 10px;
+      border-radius:999px;
+      background:#eff6ff;
+      color:#1d4ed8;
+      font-size:11px;
+      font-weight:600;
+    }
+
+    /* FOOTER */
+    footer{
+      margin-top:6px;
+      padding:16px 4px;
+      font-size:13px;
+      color:var(--muted);
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      border-top:1px solid rgba(203,213,225,0.9);
+    }
+
+    /* RESPONSIVE */
     @media (max-width:960px){
-      .hero{grid-template-columns:1fr}
-      nav a{display:none}
-      .two-col{grid-template-columns:1fr}
+      header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:8px;
+      }
+      nav a{display:none;}
+      .hero{
+        grid-template-columns:1fr;
+      }
+      .aside{
+        order:-1; /* put photo on top on mobile */
+      }
+      .two-col{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width:480px){
+      body{
+        padding:20px 14px;
+      }
+      h1{
+        font-size:24px;
+      }
+      .hero-card{
+        padding:22px 18px;
+      }
+      footer{
+        flex-direction:column;
+      }
     }
   </style>
 </head>
@@ -91,44 +402,102 @@
       <a class="brand" href="#">
         <div class="logo">JD</div>
         <div>
-          <div style="font-weight:800">Jessica Devereaux, LMHC</div>
-          <div style="font-size:13px;color:var(--muted)">Counseling & Wellness</div>
+          <div class="brand-text-title">Jessica Devereaux, LMHC</div>
+          <div class="brand-text-sub">Counseling &amp; Wellness</div>
         </div>
       </a>
+      <nav aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </header>
 
     <section class="hero">
+      <!-- LEFT: MAIN INTRO -->
       <div class="hero-card">
-        <div class="eyebrow">Licensed Mental Health Counselor</div>
-        <h1>Warm, supportive therapy for individuals, teens, and families</h1>
-        <p class="lead">Accepting new clients • Telehealth available • Free 15-minute consult</p>
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Licensed Mental Health Counselor
+        </div>
+
+        <h1>Calm, collaborative therapy for adults, teens, and families.</h1>
+
+        <p class="lead">
+          Jessica offers warm, evidence-based counseling to help you manage anxiety, navigate transitions,
+          and strengthen relationships — at a pace that feels safe and respectful.
+        </p>
+
+        <div class="pill-row">
+          <span class="pill">Anxiety & stress</span>
+          <span class="pill">Life transitions</span>
+          <span class="pill">Parent & family support</span>
+        </div>
 
         <div class="cta-row">
-          <a class="btn btn-primary" href="#contact">Book a consult</a>
-          <a class="btn btn-ghost" href="#about">Learn more</a>
+          <a class="btn btn-primary" href="#contact">Request a 15-minute consult</a>
+          <a class="btn btn-ghost" href="#about">How sessions work</a>
+        </div>
+
+        <div class="stat-grid" aria-hidden="true">
+          <div class="stat">
+            <strong>Client-centered</strong>
+            <span>Collaborative, non-judgmental space</span>
+          </div>
+          <div class="stat">
+            <strong>Telehealth</strong>
+            <span>Secure online sessions</span>
+          </div>
+          <div class="stat">
+            <strong>Families & teens</strong>
+            <span>Support for the whole system</span>
+          </div>
         </div>
       </div>
 
+      <!-- RIGHT: PHOTO + CONTACT -->
       <aside class="aside">
-        <div class="photo">
-          <img src="images/jess.jpg" alt="Portrait of Jessica Devereaux">
+        <div class="photo-card">
+          <div class="photo-frame">
+            <!-- Your photo: make sure this path exists -->
+            <img src="images/jess.jpg" alt="Portrait of Jessica Devereaux, LMHC">
+          </div>
+          <div class="photo-caption">
+            Jessica Devereaux, LMHC — individual, teen, and family counseling.
+          </div>
         </div>
 
         <div class="contact-card" id="contact">
-          <strong>Free 15-minute consult</strong>
-          <div class="muted-inline">Email: your-email@example.com</div>
+          <div class="contact-header">
+            <div>
+              <div class="contact-title">Free 15-minute consult</div>
+              <div class="contact-sub">A brief phone or video call to see if working together feels like a good fit.</div>
+            </div>
+            <div style="text-align:right;">
+              <div style="font-size:12px;color:#1d4ed8;font-weight:700;">Accepting new clients</div>
+              <div class="contact-sub">Telehealth • [Your State]</div>
+            </div>
+          </div>
 
-          <form action="#" method="POST" style="margin-top:12px;display:grid;gap:8px;">
-            <label>Your name</label>
-            <input type="text" placeholder="Name" required>
+          <!-- Later you can change action to a secure scheduler or portal -->
+          <form action="#" method="POST" style="display:grid;gap:8px;margin-top:4px;">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="First and last name" required>
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" required>
+            </div>
+            <div>
+              <label for="message">How can I help?</label>
+              <textarea id="message" name="message" placeholder="You can briefly share what you’re looking for support with."></textarea>
+            </div>
 
-            <label>Your email</label>
-            <input type="email" placeholder="you@example.com" required>
-
-            <label>Your message</label>
-            <textarea placeholder="Briefly describe what you're reaching out about"></textarea>
-
-            <button class="btn btn-primary">Send message</button>
+            <button class="btn btn-primary" type="submit">Send message</button>
+            <div class="muted-inline">
+              This form is for general inquiries only. For established clients, please use the secure client portal.
+            </div>
           </form>
         </div>
       </aside>
@@ -137,37 +506,43 @@
     <section class="two-col">
       <div>
         <h2 id="services">Services</h2>
-        <div style="margin-top:12px;display:grid;gap:12px">
+        <div class="service-list">
           <div class="service">
-            <h3>Individual Therapy</h3>
-            <p class="muted-inline">Support for anxiety, depression, self-esteem, and life transitions.</p>
+            <h3>Individual therapy</h3>
+            <p>Support for anxiety, overwhelm, low mood, burnout, and self-esteem. Sessions focus on practical tools and deeper understanding.</p>
           </div>
           <div class="service">
-            <h3>Teen Counseling</h3>
-            <p class="muted-inline">Safe, supportive space for adolescents navigating challenges and growth.</p>
+            <h3>Teen & young adult counseling</h3>
+            <p>Space for teens and young adults to talk openly about school stress, identity, relationships, and big life changes.</p>
           </div>
           <div class="service">
-            <h3>Family Work</h3>
-            <p class="muted-inline">Tools to improve communication, boundaries, and relationships.</p>
+            <h3>Parent & family support</h3>
+            <p>Help for parents and caregivers navigating communication, boundaries, and family transitions.</p>
           </div>
         </div>
       </div>
 
       <div>
         <h2 id="about">About Jessica</h2>
-        <div style="margin-top:12px;background:white;padding:16px;border-radius:12px">
-          <p class="muted-inline">
-            Jessica Devereaux, LMHC, provides warm, evidence-based therapy rooted in cognitive behavioral,
-            strengths-focused, and person-centered approaches. She supports adults, teens, and families
-            in creating meaningful, lasting change.
+        <div class="about-card">
+          <p>
+            Jessica Devereaux, LMHC, is a licensed mental health counselor providing calm,
+            collaborative therapy for adults, teens, and families. Her style is warm, curious,
+            and grounded in evidence-based practices.
           </p>
+          <p>
+            Jessica integrates cognitive behavioral therapy, mindfulness, and relational work —
+            always centering your goals and pace. She believes change happens in small, sustainable
+            steps, supported by a safe therapeutic relationship.
+          </p>
+          <span class="note-pill">Trauma-informed • LGBTQ+ affirming • Culturally aware</span>
         </div>
       </div>
     </section>
 
     <footer>
       <div>© <span id="year"></span> Jessica Devereaux, LMHC</div>
-      <div class="muted-inline">Telehealth • HIPAA-aware scheduling • Private practice</div>
+      <div>Information on this site is for educational purposes only and is not a substitute for professional care.</div>
     </footer>
   </div>
 
