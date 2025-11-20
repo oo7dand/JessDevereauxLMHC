@@ -8,10 +8,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-
- 
-
-    
     :root{
       --bg:#f3f6ff;          /* very soft blue */
       --bg-alt:#e8f0ff;      /* section background */
@@ -321,15 +317,6 @@
       box-shadow:0 16px 40px rgba(15,23,42,0.08);
     }
 
-  .two-col{
-  display: grid;
-  grid-template-columns: minmax(0,1.1fr) minmax(0,1fr);
-  gap: 22px;
-  margin-bottom: 26px;
-}
-
-    }
-
     h2{
       margin:0;
       font-size:20px;
@@ -407,9 +394,6 @@
       .aside{
         order:-1; /* put photo on top */
       }
-      .two-col{
-        grid-template-columns:1fr;
-      }
     }
 
     @media (max-width:520px){
@@ -433,7 +417,7 @@
 </head>
 <body>
   <div class="wrap">
-    <!-- HEADER -->
+    <!-- ********** HEADER: CHANGE NAME / TAGLINE HERE IF NEEDED ********** -->
     <header>
       <a class="brand" href="#">
         <div class="logo">JD</div>
@@ -443,8 +427,8 @@
         </div>
       </a>
       <nav aria-label="Main navigation">
-        <a href="#services">Services</a>
         <a href="#about">About</a>
+        <a href="#services">Services</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -458,20 +442,22 @@
           Licensed Mental Health Counselor
         </div>
 
-        <h1>My Approach & Philosophy</h1>
+        <h1>Calm, collaborative therapy for children, teens, adults, and families.</h1>
 
         <p class="lead">
-          My mission is to create a supportive, authentic space where children, teens, adults, and families feel truly seen and understood. Through mindfulness, creative expression, and evidence-based strategies, I help clients build emotional awareness, develop healthy coping skills, and strengthen their sense of self. My goal is to empower each person—and each family system—to navigate challenges with confidence, compassion, and resilience.
+          Jess offers warm, evidence-based counseling to help you manage anxiety, navigate transitions,
+          and strengthen relationships — at a pace that feels safe and respectful.
+        </p>
 
         <div class="pill-row">
+          <span class="pill">Children &amp; teens</span>
           <span class="pill">Anxiety &amp; stress</span>
-          <span class="pill">Life transitions</span>
           <span class="pill">Parent &amp; family support</span>
         </div>
 
         <div class="cta-row">
           <a class="btn btn-primary" href="#contact">Request a 15-minute consult</a>
-          <a class="btn btn-ghost" href="#about">How sessions work</a>
+          <a class="btn btn-ghost" href="#about">How I work</a>
         </div>
 
         <div class="stat-grid" aria-hidden="true">
@@ -484,7 +470,7 @@
             <span>Secure online sessions</span>
           </div>
           <div class="stat">
-            <strong>Families &amp; teens</strong>
+            <strong>Families &amp; youth</strong>
             <span>Support for the whole system</span>
           </div>
         </div>
@@ -494,6 +480,7 @@
       <aside class="aside">
         <div class="photo-card">
           <div class="photo-frame">
+            <!-- ********** PORTRAIT: REPLACE FILE AT images/jess.jpg IF NEEDED ********** -->
             <img src="images/jess.jpg" alt="Portrait of Jess Devereaux, LMHC">
           </div>
           <div class="photo-caption">
@@ -512,18 +499,27 @@
             </div>
             <div style="text-align:right;">
               <div style="font-size:12px;color:#1d4ed8;font-weight:600;">Accepting new clients</div>
-              <div class="contact-sub">Telehealth • [Your State]</div>
+              <div class="contact-sub">
+                Telehealth • <!-- ********** EDIT STATE HERE ********** -->[Your State]
+              </div>
             </div>
           </div>
 
-          <!-- Replace the action URL with your real Formspree or portal endpoint -->
-          <form action="https://formspree.io/f/your-form-id" method="POST" style="display:grid;gap:8px;">
+          <!--
+            ********** IMPORTANT FORM NOTE **********
+            - For a simple contact/consult form, you can:
+              • Use a Google Form, Formspree, Netlify Forms, or a client portal.
+            - Replace the action URL below with your real endpoint.
+            - Keep fields simple: name, email, brief message (no detailed PHI).
+          -->
+          <form action="#" method="POST" style="display:grid;gap:8px;">
             <div>
               <label for="name">Name</label>
               <input id="name" name="name" type="text" placeholder="First and last name" required>
             </div>
             <div>
               <label for="email">Email</label>
+              <!-- ********** EDIT CONTACT EMAIL PLACEHOLDER ONLY IF YOU WANT ********** -->
               <input id="email" name="email" type="email" placeholder="you@example.com" required>
             </div>
             <div>
@@ -542,73 +538,77 @@
       </aside>
     </section>
 
-    <!-- MAIN SECTIONS -->
+    <!-- ABOUT + SERVICES (STACKED IN ONE SECTION) -->
     <section class="section-shell">
-      <div class="two-col">
-        <div>
-          <h2 id="services">Services</h2>
-          <div class="service-list">
-            
+      <!-- ABOUT -->
+      <div>
+        <h2 id="about">About Jess</h2>
+        <div class="about-card">
+          <!-- ********** EDIT BIO TEXT BELOW (KEEP THE <p> TAGS) ********** -->
+          <p>
+            Jess Devereaux, LMHC, is a licensed mental health counselor who provides calm, collaborative
+            therapy for children, teens, adults, and families. Her style is warm, down-to-earth, and focused
+            on building a safe space where you can be honest without feeling judged.
+          </p>
+          <p>
+            Jess integrates mindfulness, creative expression, and evidence-based approaches — always centering
+            each client’s goals, values, and pace. Her mission is to create a supportive, authentic space where
+            young people and their families feel truly seen and understood, while building confidence,
+            coping skills, and resilience.
+          </p>
+          <!-- ********** END BIO EDIT AREA ********** -->
 
-<div class="service">
-  <h3>Creative & Mindful Counseling for Youth</h3>
-  <p>A gentle, expressive space where young people can explore emotions, process stress, and discover strengths through mindfulness, creative tools, and age-appropriate therapeutic techniques.</p>
-</div>
+          <span class="note-pill">Trauma-informed • LGBTQ+ affirming • Culturally aware</span>
+        </div>
+      </div>
 
-<div class="service">
-  <h3>Emotional Growth & Resilience Building</h3>
-  <p>Guiding children and teens toward emotional balance, coping skills, and self-understanding. We focus on nurturing resilience so they can move through difficult experiences with greater calm and confidence.</p>
-</div>
+      <!-- SERVICES -->
+      <div style="margin-top:24px;">
+        <h2 id="services">Services</h2>
+        <div class="service-list">
+          <!-- ********** EDIT / REORDER / REMOVE SERVICE BLOCKS BELOW AS NEEDED ********** -->
 
-<div class="service">
-  <h3>Family Support & Parent Collaboration</h3>
-  <p>Helping families understand emotional needs, strengthen communication, and better support their child or teen. Collaboration empowers parents and caregivers to create a more connected, grounded home environment.</p>
-</div>
-
-<div class="service">
-  <h3>Confidence, Connection & Self-Awareness Coaching</h3>
-  <p>Supporting youth in building a strong sense of self, navigating friendships, increasing confidence, and developing tools to handle anxiety, stress, and big emotions.</p>
-</div>
-
-<div class="service">
-  <h3>Mind-Body Integration for Kids & Teens</h3>
-  <p>Therapy that integrates mind, body, and emotional awareness to help children and adolescents feel grounded, centered, and more connected to themselves.</p>
-</div>
-
-<div class="service">
-  <h3>Coping Skills & Emotional Regulation</h3>
-  <p>Helping young people understand their emotions, develop healthy coping strategies, and build the resilience needed to manage stress, overwhelm, and everyday challenges.</p>
-</div>
-
-<div class="service">
-  <h3>Strength-Based Support for Growing Minds</h3>
-  <p>Mindful, creative, and relational support for kids and teens as they explore identity, find their voice, and discover their inner strength.</p>
-</div>
-
-        
-        <div>
-          <h2 id="about">About Jess</h2>
-          <div class="about-card">
-            <!-- BIO START: replace these paragraphs with Jess's full bio -->
-            <p>
-              Hi, I’m Jess Devereaux, LMHC, a licensed mental health counselor in Rhode Island and certified school counselor in Massachusetts. After 13 years working as a school counselor, I’ve transitioned into private practice, where I continue my passion for supporting children, adolescents, and their families.
-               </p>
-            <p>  
-In my years in schools—five at the preschool level and seven in middle school—I had the privilege of helping students navigate academic pressures, social challenges, emotional struggles, and moments of crisis. I led counseling groups, supported social-emotional learning, and collaborated closely with families, teachers, and IEP teams to ensure each student felt supported in every aspect of their growth.
-               </p>
-            <p>
-My counseling style is warm, relational, and authentic. I believe the therapeutic relationship is the foundation for change, and I strive to create a space where kids and teens feel seen, heard, and understood. My work is trauma-informed and rooted in mindfulness, CBT, and DBT principles. I often help clients explore how emotions show up in the body, and I’m gradually weaving in journaling and art therapy techniques to help with expression and self-discovery.
-               </p>
-            <p>
-I offer both in-person and telehealth sessions, providing flexible options for families. While my practice currently focuses on children and adolescents, I look forward to expanding to serve clients across the lifespan as my practice grows. </p>
-            <p>
-My goal is to help every client build the tools to understand themselves more deeply, manage life’s ups and downs, and move forward with greater confidence and calm.
-
-            </p>
-        
-            <!-- BIO END -->
-            <span class="note-pill">Trauma-informed • LGBTQ+ affirming • Culturally aware</span>
+          <div class="service">
+            <h3>Child &amp; Adolescent Therapy</h3>
+            <p>Supporting children and teens in feeling seen, heard, and validated as they navigate life’s challenges. Sessions help young people express themselves, build confidence, and develop emotional clarity.</p>
           </div>
+
+          <div class="service">
+            <h3>Creative &amp; Mindful Counseling for Youth</h3>
+            <p>A gentle, expressive space where young people can explore emotions, process stress, and discover strengths through mindfulness, creative tools, and age-appropriate therapeutic techniques.</p>
+          </div>
+
+          <div class="service">
+            <h3>Emotional Growth &amp; Resilience Building</h3>
+            <p>Guiding children and teens toward emotional balance, coping skills, and self-understanding. We focus on nurturing resilience so they can move through difficult experiences with greater calm and confidence.</p>
+          </div>
+
+          <div class="service">
+            <h3>Family Support &amp; Parent Collaboration</h3>
+            <p>Helping families understand emotional needs, strengthen communication, and better support their child or teen. Collaboration empowers parents and caregivers to create a more connected, grounded home environment.</p>
+          </div>
+
+          <div class="service">
+            <h3>Confidence, Connection &amp; Self-Awareness Coaching</h3>
+            <p>Supporting youth in building a strong sense of self, navigating friendships, increasing confidence, and developing tools to handle anxiety, stress, and big emotions.</p>
+          </div>
+
+          <div class="service">
+            <h3>Mind-Body Integration for Kids &amp; Teens</h3>
+            <p>Therapy that integrates mind, body, and emotional awareness to help children and adolescents feel grounded, centered, and more connected to themselves.</p>
+          </div>
+
+          <div class="service">
+            <h3>Coping Skills &amp; Emotional Regulation</h3>
+            <p>Helping young people understand their emotions, develop healthy coping strategies, and build the resilience needed to manage stress, overwhelm, and everyday challenges.</p>
+          </div>
+
+          <div class="service">
+            <h3>Strength-Based Support for Growing Minds</h3>
+            <p>Mindful, creative, and relational support for kids and teens as they explore identity, find their voice, and discover their inner strength.</p>
+          </div>
+
+          <!-- ********** END SERVICES EDIT AREA ********** -->
         </div>
       </div>
     </section>
@@ -616,7 +616,7 @@ My goal is to help every client build the tools to understand themselves more de
     <!-- FOOTER -->
     <footer>
       <div>© <span id="year"></span> Jess Devereaux, LMHC</div>
-      <div>Information on this site is for general educational purposes and does not constitute therapeutic advice or a therapeutic relationship.</div>
+      <div>Information on this site is for general educational purposes only and does not constitute therapeutic advice or a therapeutic relationship.</div>
     </footer>
   </div>
 
