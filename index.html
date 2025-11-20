@@ -49,3 +49,130 @@
     }
     .eyebrow{color:var(--accent);font-weight:700;margin-bottom:8px;font-size:13px}
     h1{margin:0 0 12px 0;font-size:28px;line-height:1.15}
+    .lead{color:var(--muted);margin:0 0 18px 0}
+    .cta-row{display:flex;gap:12px}
+    .btn{
+      padding:12px 18px;border-radius:10px;border:0;cursor:pointer;font-weight:700;
+    }
+    .btn-primary{background:var(--accent);color:white}
+    .btn-ghost{background:transparent;border:1px solid rgba(15,23,42,0.06);color:var(--accent)}
+
+    .aside{display:flex;flex-direction:column;gap:14px;}
+    .photo{border-radius:12px;height:260px;overflow:hidden;background:#eee;}
+    .photo img{width:100%;height:100%;object-fit:cover}
+
+    .contact-card{
+      background:linear-gradient(180deg, rgba(19,102,255,0.04), rgba(19,102,255,0.01));
+      padding:14px;border-radius:10px;
+    }
+
+    label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}
+    input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef;background:white;font-size:14px}
+    textarea{min-height:96px}
+    .muted-inline{color:var(--muted);font-size:13px}
+
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:26px}
+    .service{background:#fff;padding:18px;border-radius:12px;box-shadow:0 6px 22px rgba(12,18,35,0.03)}
+    .service h3{margin:0 0 8px}
+
+    footer{margin-top:28px;padding:18px 12px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;}
+
+    @media (max-width:960px){
+      .hero{grid-template-columns:1fr}
+      nav a{display:none}
+      .two-col{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="#">
+        <div class="logo">JD</div>
+        <div>
+          <div style="font-weight:800">Jessica Devereaux, LMHC</div>
+          <div style="font-size:13px;color:var(--muted)">Counseling & Wellness</div>
+        </div>
+      </a>
+    </header>
+
+    <section class="hero">
+      <div class="hero-card">
+        <div class="eyebrow">Licensed Mental Health Counselor</div>
+        <h1>Warm, supportive therapy for individuals, teens, and families</h1>
+        <p class="lead">Accepting new clients • Telehealth available • Free 15-minute consult</p>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#contact">Book a consult</a>
+          <a class="btn btn-ghost" href="#about">Learn more</a>
+        </div>
+      </div>
+
+      <aside class="aside">
+        <div class="photo">
+          <img src="images/jess.jpg" alt="Portrait of Jessica Devereaux">
+        </div>
+
+        <div class="contact-card" id="contact">
+          <strong>Free 15-minute consult</strong>
+          <div class="muted-inline">Email: your-email@example.com</div>
+
+          <form action="#" method="POST" style="margin-top:12px;display:grid;gap:8px;">
+            <label>Your name</label>
+            <input type="text" placeholder="Name" required>
+
+            <label>Your email</label>
+            <input type="email" placeholder="you@example.com" required>
+
+            <label>Your message</label>
+            <textarea placeholder="Briefly describe what you're reaching out about"></textarea>
+
+            <button class="btn btn-primary">Send message</button>
+          </form>
+        </div>
+      </aside>
+    </section>
+
+    <section class="two-col">
+      <div>
+        <h2 id="services">Services</h2>
+        <div style="margin-top:12px;display:grid;gap:12px">
+          <div class="service">
+            <h3>Individual Therapy</h3>
+            <p class="muted-inline">Support for anxiety, depression, self-esteem, and life transitions.</p>
+          </div>
+          <div class="service">
+            <h3>Teen Counseling</h3>
+            <p class="muted-inline">Safe, supportive space for adolescents navigating challenges and growth.</p>
+          </div>
+          <div class="service">
+            <h3>Family Work</h3>
+            <p class="muted-inline">Tools to improve communication, boundaries, and relationships.</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2 id="about">About Jessica</h2>
+        <div style="margin-top:12px;background:white;padding:16px;border-radius:12px">
+          <p class="muted-inline">
+            Jessica Devereaux, LMHC, provides warm, evidence-based therapy rooted in cognitive behavioral,
+            strengths-focused, and person-centered approaches. She supports adults, teens, and families
+            in creating meaningful, lasting change.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Jessica Devereaux, LMHC</div>
+      <div class="muted-inline">Telehealth • HIPAA-aware scheduling • Private practice</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
