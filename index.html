@@ -3,625 +3,509 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Jess Devereaux, LMHC — Counseling & Wellness</title>
-  <meta name="description" content="Warm, collaborative counseling for adults, teens, and families." />
+
+  <!-- ********** EDIT OFTEN: PAGE TITLE + DESCRIPTION (SEO) ********** -->
+  <title>Jess Devereaux, LMHC — Counseling for Youth, Adults & Families</title>
+  <meta name="description" content="Warm, collaborative counseling for children, teens, adults, and families. Telehealth available." />
+
+  <!-- ********** EDIT OFTEN: SOCIAL SHARE (OPTIONAL) **********
+       Replace YOURDOMAIN.com and the image path when you have it.
+       If you don’t want social share cards, you can delete this whole block. -->
+  <meta property="og:title" content="Jess Devereaux, LMHC — Counseling for Youth, Adults & Families" />
+  <meta property="og:description" content="Warm, collaborative counseling for children, teens, adults, and families. Telehealth available." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://YOURDOMAIN.com/" />
+  <meta property="og:image" content="https://YOURDOMAIN.com/images/social-card.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#f3f6ff;          /* very soft blue */
-      --bg-alt:#e8f0ff;      /* section background */
+      --ink:#0b1220;
+      --muted:#4b5563;
+      --soft:#6b7280;
+      --bg:#f6f9ff;
       --card:#ffffff;
-      --muted:#6b7280;
-      --accent:#2563eb;      /* main blue */
-      --accent-soft:#e0ebff; /* very light accent */
-      --radius-lg:22px;
-      --radius-md:16px;
-      --max-width:1080px;
+      --line:rgba(148,163,184,.35);
+      --blue:#2563eb;
+      --blue2:#38bdf8;
+      --blueSoft:#e7efff;
+      --shadow:0 18px 50px rgba(15,23,42,.10);
+      --shadow2:0 10px 30px rgba(15,23,42,.08);
+      --r-xl:26px;
+      --r-lg:20px;
+      --r-md:14px;
+      --max:1120px;
+
       font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-      color:#0f172a;
+      color:var(--ink);
     }
 
-    *{box-sizing:border-box;}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
-      background:radial-gradient(circle at top, #e1ebff 0%, var(--bg) 40%, #f9fbff 100%);
-      padding:28px 18px 32px;
+      background:
+        radial-gradient(1100px 520px at 50% -80px, rgba(56,189,248,.28), transparent 60%),
+        radial-gradient(900px 520px at 10% 15%, rgba(37,99,235,.12), transparent 55%),
+        linear-gradient(180deg, #f3f7ff 0%, var(--bg) 45%, #fbfdff 100%);
       line-height:1.6;
       -webkit-font-smoothing:antialiased;
+      padding:18px 14px 40px;
     }
 
-    .wrap{
-      width:100%;
-      max-width:var(--max-width);
-      margin:0 auto;
-    }
+    .wrap{max-width:var(--max); margin:0 auto}
 
-    /* HEADER */
+    /* Header */
     header{
-      background:rgba(255,255,255,0.9);
-      border-radius:999px;
-      padding:10px 18px;
+      position:sticky;
+      top:10px;
+      z-index:20;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:12px;
-      box-shadow:0 12px 32px rgba(15,23,42,0.10);
-      margin-bottom:26px;
-      border:1px solid rgba(148,163,184,0.35);
+      gap:14px;
+      padding:12px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.78);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow2);
       backdrop-filter:blur(12px);
+      max-width:var(--max);
+      margin:0 auto 18px;
     }
-
     .brand{
       display:flex;
       align-items:center;
       gap:10px;
       text-decoration:none;
       color:inherit;
+      min-width:0;
     }
-
-    .logo{
-      width:46px;
-      height:46px;
+    .mark{
+      width:44px; height:44px;
       border-radius:18px;
-      background:linear-gradient(145deg,#2563eb,#38bdf8);
-      display:flex;
+      background:linear-gradient(145deg, var(--blue), var(--blue2));
+      box-shadow:0 10px 24px rgba(37,99,235,.42);
+      display:flex; align-items:center; justify-content:center;
+      color:#fff;
+      font-weight:700;
+      flex:0 0 auto;
+    }
+    .brandText{min-width:0}
+    .brandText b{display:block; font-size:15px; font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+    .brandText span{display:block; font-size:12px; color:var(--soft); white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+
+    nav{display:flex; gap:10px; align-items:center}
+    nav a{
+      text-decoration:none;
+      color:var(--muted);
+      font-weight:600;
+      font-size:13px;
+      padding:8px 10px;
+      border-radius:999px;
+    }
+    nav a:hover{background:rgba(37,99,235,.08); color:var(--blue)}
+    .btn{
+      display:inline-flex;
       align-items:center;
       justify-content:center;
-      color:white;
-      font-weight:700;
-      font-size:17px;
-      box-shadow:0 10px 25px rgba(37,99,235,0.55);
-    }
-
-    .brand-text-title{
-      font-weight:600;
-      font-size:17px;
-    }
-    .brand-text-sub{
-      font-size:13px;
-      color:var(--muted);
-    }
-
-    nav a{
-      margin-left:18px;
-      color:#4b5563;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(37,99,235,.25);
+      background:linear-gradient(145deg, rgba(37,99,235,.96), rgba(29,78,216,.96));
+      color:#fff;
+      font-weight:800;
       text-decoration:none;
-      font-weight:500;
-      font-size:14px;
+      box-shadow:0 14px 32px rgba(37,99,235,.40);
     }
-    nav a:hover{
-      color:#1d4ed8;
+    .btn:focus-visible,
+    .btnGhost:focus-visible,
+    nav a:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible,
+    button:focus-visible{
+      outline:3px solid rgba(56,189,248,.55);
+      outline-offset:2px;
     }
 
-    /* HERO */
+    /* Hero */
     .hero{
       display:grid;
-      grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);
-      gap:26px;
-      align-items:stretch;
-      margin-bottom:34px;
+      grid-template-columns:minmax(0,1.25fr) minmax(0,.95fr);
+      gap:18px;
+      max-width:var(--max);
+      margin:0 auto;
     }
-
-    .hero-card{
-      background:var(--card);
-      border-radius:var(--radius-lg);
-      padding:26px 26px 24px;
-      box-shadow:0 18px 45px rgba(15,23,42,0.11);
-      border:1px solid rgba(148,163,184,0.35);
+    .heroLeft{
+      border-radius:var(--r-xl);
+      background:rgba(255,255,255,.82);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      padding:26px 22px;
     }
-
-    .eyebrow{
+    .kicker{
       display:inline-flex;
       align-items:center;
       gap:8px;
-      padding:5px 11px;
+      padding:6px 12px;
       border-radius:999px;
-      background:var(--accent-soft);
+      background:var(--blueSoft);
       color:#1d4ed8;
       font-size:12px;
-      font-weight:600;
-      margin-bottom:10px;
+      font-weight:700;
+      margin-bottom:12px;
     }
-    .eyebrow-dot{
-      width:7px;
-      height:7px;
-      border-radius:999px;
-      background:#1d4ed8;
-    }
-
     h1{
-      margin:0 0 10px 0;
-      font-size:28px;
-      line-height:1.25;
+      margin:0 0 10px;
+      font-size:34px;
+      line-height:1.15;
+      letter-spacing:-.02em;
     }
+    .lead{margin:0 0 16px; color:var(--muted); font-size:15px}
 
-    .lead{
-      margin:0 0 18px 0;
-      font-size:15px;
-      color:#4b5563;
-    }
-
-    .pill-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin-bottom:16px;
-    }
+    .pillRow{display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 16px}
     .pill{
-      padding:5px 11px;
-      border-radius:999px;
-      background:#eef2ff;
-      color:#4338ca;
       font-size:12px;
-      font-weight:500;
-    }
-
-    .cta-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-bottom:18px;
-    }
-
-    .btn{
-      padding:11px 18px;
+      font-weight:700;
+      color:#1f3a8a;
+      background:rgba(56,189,248,.14);
+      border:1px solid rgba(56,189,248,.25);
+      padding:6px 10px;
       border-radius:999px;
-      border:none;
-      cursor:pointer;
-      font-weight:600;
-      font-size:14px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      text-decoration:none;
-      transition:transform 0.08s ease, box-shadow 0.08s ease, background 0.12s ease;
     }
-
-    .btn-primary{
-      background:linear-gradient(145deg,#2563eb,#1d4ed8);
-      color:#f9fafb;
-      box-shadow:0 14px 32px rgba(37,99,235,0.55);
-    }
-    .btn-primary:hover{
-      transform:translateY(-1px);
-      box-shadow:0 18px 40px rgba(37,99,235,0.65);
-    }
-
-    .btn-ghost{
-      background:#f9fafb;
-      border:1px solid rgba(148,163,184,0.7);
+    .ctaRow{display:flex; gap:10px; flex-wrap:wrap}
+    .btnGhost{
+      padding:10px 14px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid rgba(148,163,184,.55);
       color:#1d4ed8;
+      font-weight:800;
+      text-decoration:none;
     }
-    .btn-ghost:hover{
-      background:#e5edff;
-    }
+    .btnGhost:hover{background:rgba(37,99,235,.06)}
 
-    .stat-grid{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:6px;
+    .heroRight{display:grid; gap:14px}
+    .photoCard{
+      border-radius:var(--r-xl);
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      padding:12px;
     }
-    .stat{
-      flex:1 1 110px;
-      background:#f3f6ff;
-      border-radius:14px;
-      padding:9px 11px;
+    .photoFrame{
+      border-radius:20px;
+      padding:8px;
+      background:linear-gradient(180deg, rgba(37,99,235,.10), rgba(56,189,248,.14));
     }
-    .stat strong{
-      display:block;
-      font-size:15px;
-    }
-    .stat span{
-      font-size:12px;
-      color:var(--muted);
-    }
-
-    /* ASIDE (PHOTO + CONTACT) */
-    .aside{
-      display:flex;
-      flex-direction:column;
-      gap:14px;
-    }
-
-    .photo-card{
-      background:var(--card);
-      border-radius:var(--radius-lg);
-      padding:10px;
-      border:1px solid rgba(148,163,184,0.4);
-      box-shadow:0 16px 40px rgba(15,23,42,0.20);
-    }
-
-    .photo-frame{
-      border-radius:18px;
-      background:#e5edff;
-      padding:6px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    }
-
-    .photo-frame img{
-      max-width:100%;
+    .photoFrame img{
+      width:100%;
       height:auto;
-      display:block;
-      border-radius:14px;
+      border-radius:16px;
       object-fit:contain;
-    }
-
-    .photo-caption{
-      margin-top:8px;
-      text-align:center;
-      font-size:12px;
-      color:var(--muted);
-    }
-
-    .contact-card{
-      background:linear-gradient(150deg,#e0ecff 0%,#e0f2fe 40%,#ffffff 100%);
-      border-radius:var(--radius-md);
-      padding:14px 16px 16px;
-      border:1px solid rgba(148,163,184,0.7);
-      box-shadow:0 16px 40px rgba(15,23,42,0.20);
-    }
-
-    .contact-header{
-      display:flex;
-      justify-content:space-between;
-      gap:8px;
-      align-items:flex-start;
-      margin-bottom:10px;
-    }
-
-    .contact-title{
-      font-weight:600;
-      font-size:15px;
-    }
-    .contact-sub{
-      font-size:12px;
-      color:var(--muted);
-    }
-
-    label{
-      font-size:12px;
-      color:var(--muted);
       display:block;
-      margin-bottom:4px;
+    }
+    .photoCaption{text-align:center; font-size:12px; color:var(--soft); margin-top:8px}
+
+    .consultCard{
+      border-radius:var(--r-xl);
+      background:linear-gradient(150deg,#e7efff 0%,#e0f2fe 40%,#ffffff 100%);
+      border:1px solid rgba(148,163,184,.55);
+      box-shadow:var(--shadow);
+      padding:16px;
+    }
+    .consultTop{display:flex; justify-content:space-between; gap:10px; align-items:flex-start}
+    .consultTop h3{margin:0; font-size:15px}
+    .tag{
+      font-size:12px;
+      font-weight:800;
+      color:#1d4ed8;
+      background:#fff;
+      border:1px solid rgba(37,99,235,.18);
+      padding:6px 10px;
+      border-radius:999px;
+      white-space:nowrap;
     }
 
+    label{display:block; font-size:12px; font-weight:700; color:var(--muted); margin:8px 0 4px}
     input,textarea{
       width:100%;
-      padding:9px 10px;
-      border-radius:10px;
-      border:1px solid rgba(148,163,184,0.85);
-      background:#ffffff;
+      padding:10px;
+      border-radius:12px;
+      border:1px solid rgba(148,163,184,.7);
       font-size:14px;
-      font-family:inherit;
+      background:#fff;
     }
-    textarea{
-      min-height:90px;
-      resize:vertical;
-    }
+    textarea{min-height:100px; resize:vertical}
 
-    .muted-inline{
-      font-size:11px;
-      color:var(--muted);
-    }
-
-    /* MAIN SECTIONS */
-    .section-shell{
-      background:rgba(255,255,255,0.70);
-      border-radius:var(--radius-lg);
-      padding:20px 18px 18px;
-      border:1px solid rgba(148,163,184,0.35);
-      box-shadow:0 16px 40px rgba(15,23,42,0.08);
-    }
-
-    h2{
-      margin:0;
-      font-size:20px;
-      color:#111827;
-    }
-
-    .service-list{
+    .formBtn{
+      width:100%;
       margin-top:12px;
-      display:grid;
-      gap:12px;
-    }
-    .service{
-      background:var(--bg-alt);
-      padding:14px 14px 12px;
-      border-radius:14px;
-      border:1px solid rgba(191,219,254,0.9);
-    }
-    .service h3{
-      margin:0 0 4px 0;
-      font-size:15px;
-    }
-    .service p{
-      margin:0;
-      font-size:13px;
-      color:var(--muted);
-    }
-
-    .about-card{
-      margin-top:12px;
-      background:var(--card);
-      padding:16px 16px 14px;
-      border-radius:16px;
-      border:1px solid rgba(191,219,254,0.9);
-      font-size:14px;
-      color:var(--muted);
-    }
-    .about-card p{
-      margin:0 0 8px 0;
-    }
-
-    .note-pill{
-      display:inline-block;
-      margin-top:4px;
-      padding:4px 10px;
+      padding:11px;
       border-radius:999px;
-      background:#e0ecff;
-      color:#1d4ed8;
-      font-size:11px;
-      font-weight:500;
+      border:1px solid rgba(37,99,235,.30);
+      background:linear-gradient(145deg, rgba(37,99,235,.96), rgba(29,78,216,.96));
+      color:#fff;
+      font-weight:900;
+      cursor:pointer;
     }
+    .formBtn:hover{filter:brightness(1.03)}
+    .disclaimer{margin-top:10px; font-size:11px; color:var(--soft)}
+    .status{margin-top:10px; font-size:12px; color:var(--muted)}
+    .status strong{color:#1d4ed8}
+
+    section.block{
+      max-width:var(--max);
+      margin:18px auto 0;
+      border-radius:var(--r-xl);
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow2);
+      padding:22px 18px;
+    }
+    .blockHead h2{margin:0 0 10px; font-size:20px}
+    .grid2{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+    .card{
+      border-radius:18px;
+      background:#f6f9ff;
+      border:1px solid rgba(191,219,254,.95);
+      padding:16px;
+    }
+    .card h3{margin:0 0 6px; font-size:15px}
+    .card p{margin:0; font-size:13px; color:var(--muted)}
 
     footer{
-      margin-top:18px;
-      padding:12px 4px 0;
+      max-width:var(--max);
+      margin:18px auto 0;
       font-size:12px;
-      color:var(--muted);
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      border-top:1px solid rgba(191,219,254,0.9);
+      color:var(--soft);
+      padding:0 2px;
     }
 
-    /* RESPONSIVE */
-    @media (max-width:960px){
-      header{
-        flex-direction:column;
-        align-items:flex-start;
-        gap:6px;
-        border-radius:20px;
-      }
-      nav a{display:none;}
-      .hero{
-        grid-template-columns:1fr;
-      }
-      .aside{
-        order:-1; /* put photo on top */
-      }
-    }
-
-    @media (max-width:520px){
-      body{
-        padding:20px 12px 26px;
-      }
-      h1{
-        font-size:24px;
-      }
-      .hero-card{
-        padding:22px 18px 18px;
-      }
-      header{
-        padding:9px 14px;
-      }
-      footer{
-        flex-direction:column;
-      }
+    @media(max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .grid2{grid-template-columns:1fr}
+      nav a{display:none}
     }
   </style>
 </head>
+
 <body>
-  <div class="wrap">
-    <!-- ********** HEADER: CHANGE NAME / TAGLINE HERE IF NEEDED ********** -->
-    <header>
-      <a class="brand" href="#">
-        <div class="logo">JD</div>
-        <div>
-          <div class="brand-text-title">Jess Devereaux, LMHC</div>
-          <div class="brand-text-sub">Counseling &amp; Wellness</div>
-        </div>
-      </a>
-      <nav aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
 
-    <!-- HERO -->
-    <section class="hero">
-      <!-- LEFT -->
-      <div class="hero-card">
-        <div class="eyebrow">
-          <span class="eyebrow-dot"></span>
-          Licensed Mental Health Counselor
-        </div>
+<header>
+  <a class="brand" href="#top">
+    <!-- ********** EDIT OFTEN: LOGO INITIALS ********** -->
+    <div class="mark">JD</div>
 
-        <h1>Calm, collaborative therapy for children, teens, adults, and families.</h1>
+    <div class="brandText">
+      <!-- ********** EDIT OFTEN: NAME + SUBTITLE IN HEADER ********** -->
+      <b>Jess Devereaux, LMHC</b>
+      <span>Counseling for youth, adults & families</span>
+    </div>
+  </a>
 
-        <p class="lead">
-          Jess offers warm, evidence-based counseling to help you manage anxiety, navigate transitions,
-          and strengthen relationships — at a pace that feels safe and respectful.
-        </p>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
 
-        <div class="pill-row">
-          <span class="pill">Children &amp; teens</span>
-          <span class="pill">Anxiety &amp; stress</span>
-          <span class="pill">Parent &amp; family support</span>
-        </div>
+    <!-- ********** EDIT OFTEN: MAIN CTA LABEL ********** -->
+    <a class="btn" href="#contact">Start the Conversation</a>
+  </nav>
+</header>
 
-        <div class="cta-row">
-          <a class="btn btn-primary" href="#contact">Request a 15-minute consult</a>
-          <a class="btn btn-ghost" href="#about">How I work</a>
-        </div>
+<main class="wrap" id="top">
+  <section class="hero">
+    <div class="heroLeft">
+      <!-- ********** EDIT OFTEN: HERO KICKER ********** -->
+      <div class="kicker">Licensed Mental Health Counselor</div>
 
-        <div class="stat-grid" aria-hidden="true">
-          <div class="stat">
-            <strong>Client-centered</strong>
-            <span>Collaborative, non-judgmental space</span>
-          </div>
-          <div class="stat">
-            <strong>Telehealth</strong>
-            <span>Secure online sessions</span>
-          </div>
-          <div class="stat">
-            <strong>Families &amp; youth</strong>
-            <span>Support for the whole system</span>
-          </div>
-        </div>
+      <!-- ********** EDIT OFTEN: HERO HEADLINE ********** -->
+      <h1>Support that feels steady, warm, and practical.</h1>
+
+      <!-- ********** EDIT OFTEN: HERO INTRO PARAGRAPH ********** -->
+      <p class="lead">
+        I provide a calm, authentic space for children, teens, adults, and families to feel truly seen and understood.
+      </p>
+
+      <!-- ********** EDIT OFTEN: HERO “PILLS” ********** -->
+      <div class="pillRow">
+        <span class="pill">Children &amp; Teens</span>
+        <span class="pill">Adults</span>
+        <span class="pill">Families</span>
+        <span class="pill">Telehealth</span>
       </div>
 
-      <!-- RIGHT -->
-      <aside class="aside">
-        <div class="photo-card">
-          <div class="photo-frame">
-            <!-- ********** PORTRAIT: REPLACE FILE AT images/jess.jpg IF NEEDED ********** -->
-            <img src="images/jess.jpg" alt="Portrait of Jess Devereaux, LMHC">
-          </div>
-          <div class="photo-caption">
-            Jess Devereaux, LMHC — individual, teen, and family counseling.
-          </div>
+      <div class="ctaRow">
+        <!-- ********** EDIT OFTEN: HERO BUTTON TEXT ********** -->
+        <a class="btn" href="#contact">Start the Conversation</a>
+        <a class="btnGhost" href="#services">Explore Services</a>
+      </div>
+    </div>
+
+    <div class="heroRight">
+      <div class="photoCard">
+        <div class="photoFrame">
+          <!-- ********** EDIT OFTEN: HEADSHOT FILE PATH **********
+               Put your headshot at: /images/jess.jpg  (same folder structure)
+               If your filename differs, change it here. -->
+          <img src="images/jess.jpg" alt="Jess Devereaux, LMHC">
         </div>
 
-        <div class="contact-card" id="contact">
-          <div class="contact-header">
-            <div>
-              <div class="contact-title">Free 15-minute consult</div>
-              <div class="contact-sub">
-                A brief phone or video call to see if working together feels like a good fit.
-                This is not a therapy session or crisis service.
-              </div>
-            </div>
-            <div style="text-align:right;">
-              <div style="font-size:12px;color:#1d4ed8;font-weight:600;">Accepting new clients</div>
-              <div class="contact-sub">
-                Telehealth • <!-- ********** EDIT STATE HERE ********** -->[Your State]
-              </div>
-            </div>
-          </div>
-
-          <!--
-            ********** IMPORTANT FORM NOTE **********
-            - For a simple contact/consult form, you can:
-              • Use a Google Form, Formspree, Netlify Forms, or a client portal.
-            - Replace the action URL below with your real endpoint.
-            - Keep fields simple: name, email, brief message (no detailed PHI).
-          -->
-          <form action="#" method="POST" style="display:grid;gap:8px;">
-            <div>
-              <label for="name">Name</label>
-              <input id="name" name="name" type="text" placeholder="First and last name" required>
-            </div>
-            <div>
-              <label for="email">Email</label>
-              <!-- ********** EDIT CONTACT EMAIL PLACEHOLDER ONLY IF YOU WANT ********** -->
-              <input id="email" name="email" type="email" placeholder="you@example.com" required>
-            </div>
-            <div>
-              <label for="message">How can I help?</label>
-              <textarea id="message" name="message" placeholder="You can briefly share what you’re looking for support with."></textarea>
-            </div>
-
-            <button class="btn btn-primary" type="submit">Send message</button>
-
-            <div class="muted-inline">
-              This form is for general inquiries only and should not include sensitive or crisis information.
-              If you are in crisis, please call 988 or your local emergency number.
-            </div>
-          </form>
-        </div>
-      </aside>
-    </section>
-
-    <!-- ABOUT + SERVICES (STACKED IN ONE SECTION) -->
-    <section class="section-shell">
-      <!-- ABOUT -->
-      <div>
-        <h2 id="about">About Jess</h2>
-        <div class="about-card">
-          <!-- ********** EDIT BIO TEXT BELOW (KEEP THE <p> TAGS) ********** -->
-          <p>
-            Jess Devereaux, LMHC, is a licensed mental health counselor who provides calm, collaborative
-            therapy for children, teens, adults, and families. Her style is warm, down-to-earth, and focused
-            on building a safe space where you can be honest without feeling judged.
-          </p>
-          <p>
-            Jess integrates mindfulness, creative expression, and evidence-based approaches — always centering
-            each client’s goals, values, and pace. Her mission is to create a supportive, authentic space where
-            young people and their families feel truly seen and understood, while building confidence,
-            coping skills, and resilience.
-          </p>
-          <!-- ********** END BIO EDIT AREA ********** -->
-
-          <span class="note-pill">Trauma-informed • LGBTQ+ affirming • Culturally aware</span>
-        </div>
+        <!-- ********** EDIT OFTEN: PHOTO CAPTION ********** -->
+        <div class="photoCaption">Jess Devereaux, LMHC</div>
       </div>
 
-      <!-- SERVICES -->
-      <div style="margin-top:24px;">
-        <h2 id="services">Services</h2>
-        <div class="service-list">
-          <!-- ********** EDIT / REORDER / REMOVE SERVICE BLOCKS BELOW AS NEEDED ********** -->
+      <div class="consultCard" id="contact">
+        <div class="consultTop">
+          <!-- ********** EDIT OFTEN: FORM TITLE ********** -->
+          <h3>Start the Conversation</h3>
 
-          <div class="service">
-            <h3>Child &amp; Adolescent Therapy</h3>
-            <p>Supporting children and teens in feeling seen, heard, and validated as they navigate life’s challenges. Sessions help young people express themselves, build confidence, and develop emotional clarity.</p>
-          </div>
-
-          <div class="service">
-            <h3>Creative &amp; Mindful Counseling for Youth</h3>
-            <p>A gentle, expressive space where young people can explore emotions, process stress, and discover strengths through mindfulness, creative tools, and age-appropriate therapeutic techniques.</p>
-          </div>
-
-          <div class="service">
-            <h3>Emotional Growth &amp; Resilience Building</h3>
-            <p>Guiding children and teens toward emotional balance, coping skills, and self-understanding. We focus on nurturing resilience so they can move through difficult experiences with greater calm and confidence.</p>
-          </div>
-
-          <div class="service">
-            <h3>Family Support &amp; Parent Collaboration</h3>
-            <p>Helping families understand emotional needs, strengthen communication, and better support their child or teen. Collaboration empowers parents and caregivers to create a more connected, grounded home environment.</p>
-          </div>
-
-          <div class="service">
-            <h3>Confidence, Connection &amp; Self-Awareness Coaching</h3>
-            <p>Supporting youth in building a strong sense of self, navigating friendships, increasing confidence, and developing tools to handle anxiety, stress, and big emotions.</p>
-          </div>
-
-          <div class="service">
-            <h3>Mind-Body Integration for Kids &amp; Teens</h3>
-            <p>Therapy that integrates mind, body, and emotional awareness to help children and adolescents feel grounded, centered, and more connected to themselves.</p>
-          </div>
-
-          <div class="service">
-            <h3>Coping Skills &amp; Emotional Regulation</h3>
-            <p>Helping young people understand their emotions, develop healthy coping strategies, and build the resilience needed to manage stress, overwhelm, and everyday challenges.</p>
-          </div>
-
-          <div class="service">
-            <h3>Strength-Based Support for Growing Minds</h3>
-            <p>Mindful, creative, and relational support for kids and teens as they explore identity, find their voice, and discover their inner strength.</p>
-          </div>
-
-          <!-- ********** END SERVICES EDIT AREA ********** -->
+          <!-- ********** EDIT OFTEN: STATUS TAG ********** -->
+          <div class="tag">Accepting New Clients</div>
         </div>
+
+        <!--
+          ********** IMPORTANT **********
+          This form uses a mailto link so it works on GitHub Pages without a server.
+          It opens the visitor's email app. If you want true “submit to inbox” without email app,
+          use Formspree or another form backend later.
+        -->
+        <form id="consultForm" novalidate>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" autocomplete="name" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="How can I help? (Please avoid sensitive or crisis details.)"></textarea>
+
+          <!-- ********** EDIT OFTEN: SUBMIT BUTTON LABEL ********** -->
+          <button class="formBtn" type="submit">Send Message</button>
+
+          <div class="disclaimer">
+            This form is for general inquiries only. Please do not include sensitive or crisis information.
+            If you are in immediate danger or experiencing an emergency, call 911 or go to your nearest emergency room.
+          </div>
+
+          <div id="formStatus" class="status" aria-live="polite"></div>
+        </form>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- FOOTER -->
-    <footer>
-      <div>© <span id="year"></span> Jess Devereaux, LMHC</div>
-      <div>Information on this site is for general educational purposes only and does not constitute therapeutic advice or a therapeutic relationship.</div>
-    </footer>
-  </div>
+  <section class="block" id="about">
+    <div class="blockHead">
+      <h2>About</h2>
+    </div>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+    <!-- ********** EDIT OFTEN: ABOUT TEXT ********** -->
+    <p>
+      My mission is to create a supportive, authentic space where children, teens, adults, and families feel truly seen and understood.
+      Together, we’ll build practical tools for emotional regulation, communication, and resilience—at a pace that feels safe and manageable.
+    </p>
+
+    <!-- ********** EDIT OFTEN: QUICK DETAILS (OPTIONAL) **********
+         Add a short list like:
+         • Based in: Massachusetts / Rhode Island
+         • Telehealth: Yes
+         • Ages: 8+ / teens / adults
+         If you don’t want it, delete the whole <p> below. -->
+    <p style="margin:10px 0 0; color:var(--muted); font-size:13px;">
+      <strong style="color:var(--ink);">Availability:</strong> Telehealth available. In-person options may be limited depending on schedule.
+    </p>
+  </section>
+
+  <section class="block" id="services">
+    <div class="blockHead">
+      <h2>Services</h2>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <!-- ********** EDIT OFTEN: SERVICE 1 ********** -->
+        <h3>Child &amp; Adolescent Therapy</h3>
+        <p>Helping kids and teens build emotional awareness, coping skills, confidence, and healthy routines.</p>
+      </div>
+
+      <div class="card">
+        <!-- ********** EDIT OFTEN: SERVICE 2 ********** -->
+        <h3>Family Support</h3>
+        <p>Strengthening connection, communication, and boundaries—especially during times of transition or stress.</p>
+      </div>
+
+      <div class="card">
+        <!-- ********** EDIT OFTEN: SERVICE 3 ********** -->
+        <h3>Adult Therapy</h3>
+        <p>Support for anxiety, life transitions, burnout, self-esteem, and creating more sustainable patterns.</p>
+      </div>
+
+      <div class="card">
+        <!-- ********** EDIT OFTEN: SERVICE 4 ********** -->
+        <h3>Mind–Body Integration</h3>
+        <p>Grounding skills and practical strategies to help you feel more steady, connected, and resilient.</p>
+      </div>
+    </div>
+
+    <!-- ********** EDIT OFTEN: INSURANCE/FEES NOTE (OPTIONAL) **********
+         Keep it vague unless you’re ready to be specific. Delete if not needed. -->
+    <p style="margin:14px 0 0; color:var(--muted); font-size:13px;">
+      Questions about rates, insurance, and scheduling? Use the form above and I’ll respond as soon as possible.
+    </p>
+  </section>
+</main>
+
+<footer>
+  <!-- ********** EDIT OFTEN: FOOTER TEXT ********** -->
+  © <span id="year"></span> Jess Devereaux, LMHC • All rights reserved
+</footer>
+
+<script>
+  // Year
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // ********** EDIT OFTEN: WHERE EMAIL SHOULD GO **********
+  const DEST_EMAIL = "jessdevereauxlmhc@gmail.com";
+
+  // ********** EDIT OFTEN: EMAIL SUBJECT LINE **********
+  const SUBJECT_LINE = "Start the Conversation (Website Inquiry)";
+
+  // Mailto compose (works on GitHub Pages)
+  const form = document.getElementById("consultForm");
+  const statusEl = document.getElementById("formStatus");
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    // Tiny client-side validation (basic)
+    if(!name || !email){
+      statusEl.innerHTML = "<strong>Missing info:</strong> Please add your name and email.";
+      return;
+    }
+
+    const subject = encodeURIComponent(SUBJECT_LINE);
+    const body = encodeURIComponent(
+`Name: ${name}
+Email: ${email}
+
+Message:
+${message || "(No message entered)"}`
+    );
+
+    // Helpful status text before opening mail client
+    statusEl.innerHTML = "<strong>Opening your email app…</strong> If nothing happens, please email directly: " + DEST_EMAIL;
+
+    window.location.href = `mailto:${encodeURIComponent(DEST_EMAIL)}?subject=${subject}&body=${body}`;
+  });
+</script>
+
 </body>
 </html>
