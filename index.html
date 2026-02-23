@@ -11,209 +11,344 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --bg:#f7f9fd;
-  --ink:#2b2f38;
-  --muted:#6b7280;
-  --accent:#2563eb;
-  --line:rgba(148,163,184,.35);
-  --card:#ffffff;
-}
+  :root{
+    --bg:#f7f9fd;
+    --ink:#1f2430;
+    --muted:#6b7280;
+    --accent:#1d4ed8;
+    --line:rgba(148,163,184,.35);
+    --card:#ffffff;
+    --lux:#0f172a;
+    --lux2:#334155;
+  }
 
-*{box-sizing:border-box}
+  *{box-sizing:border-box}
 
-body{
-  margin:0;
-  background:linear-gradient(180deg,#f3f7ff 0%, var(--bg) 100%);
-  padding:40px 16px;
-  display:flex;
-  justify-content:center;
-  color:var(--ink);
-  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-}
+  body{
+    margin:0;
+    background:
+      radial-gradient(1200px 600px at 15% 0%, rgba(29,78,216,.10), transparent 55%),
+      radial-gradient(900px 500px at 85% 10%, rgba(15,23,42,.08), transparent 60%),
+      linear-gradient(180deg,#f3f7ff 0%, var(--bg) 100%);
+    padding:40px 16px;
+    display:flex;
+    justify-content:center;
+    color:var(--ink);
+    font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  }
 
-.container{ width:100%; max-width:820px; }
+  .container{ width:100%; max-width:900px; }
 
-.card{
-  background:var(--card);
-  border-radius:20px;
-  padding:28px;
-  border:1px solid var(--line);
-  box-shadow:0 20px 60px rgba(0,0,0,.06);
-}
+  .card{
+    background:var(--card);
+    border-radius:22px;
+    padding:30px;
+    border:1px solid var(--line);
+    box-shadow:0 22px 70px rgba(0,0,0,.07);
+  }
 
-.topRow{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:18px;
-  flex-wrap:wrap;
-  margin-bottom:18px;
-}
+  .topRow{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:18px;
+    flex-wrap:wrap;
+    margin-bottom:18px;
+  }
 
-.logoImg{
-  width:200px;
-  max-width:65vw;
-  height:auto;
-  display:block;
-  border-radius:14px;
-}
+  /* MUCH bigger logo */
+  .logoImg{
+    width:340px;
+    max-width:80vw;
+    height:auto;
+    display:block;
+    border-radius:16px;
+    object-fit:contain;
+    filter: drop-shadow(0 10px 18px rgba(15,23,42,.10));
+  }
 
-.tagline{
-  font-size:14px;
-  color:var(--muted);
-  margin-top:6px;
-}
+  .tagline{
+    margin-top:10px;
+    font-size:14px;
+    color:var(--muted);
+    letter-spacing:.2px;
+  }
 
-.photoWrap{
-  width:170px;
-  max-width:45vw;
-}
+  .photoWrap{
+    width:190px;
+    max-width:45vw;
+  }
 
-.photo{
-  width:100%;
-  border-radius:18px;
-  object-fit:cover;
-  aspect-ratio:1/1;
-  border:1px solid var(--line);
-  box-shadow:0 14px 28px rgba(15,23,42,.08);
-}
+  .photo{
+    width:100%;
+    height:auto;
+    display:block;
+    border-radius:20px;
+    object-fit:cover;
+    aspect-ratio:1/1;
+    border:1px solid rgba(148,163,184,.35);
+    box-shadow:0 16px 34px rgba(15,23,42,.10);
+    background:#eef2ff;
+  }
 
-.delicate{
-  font-family:"Cormorant Garamond", serif;
-  font-size:19px;
-  color:#3a4252;
-  line-height:1.9;
-  margin:0 0 18px;
-}
+  .delicate{
+    font-family:"Cormorant Garamond", serif;
+    font-size:20px;
+    color:#2b3445;
+    line-height:1.9;
+    margin:0 0 18px;
+  }
 
-p{
-  line-height:1.75;
-  font-size:15px;
-  margin:0 0 18px;
-}
+  p{
+    line-height:1.75;
+    font-size:15px;
+    color:var(--ink);
+    margin:0 0 18px;
+  }
 
-.links{
-  margin-top:22px;
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-}
+  .links{
+    margin-top:22px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
 
-a.button{
-  text-decoration:none;
-  padding:14px 16px;
-  border-radius:12px;
-  background:linear-gradient(145deg, rgba(37,99,235,.95), rgba(29,78,216,.95));
-  color:white;
-  font-weight:600;
-  text-align:center;
-  display:block;
-}
+  a.button{
+    text-decoration:none;
+    padding:14px 16px;
+    border-radius:14px;
+    border:1px solid rgba(37,99,235,.22);
+    background:linear-gradient(145deg, rgba(29,78,216,.98), rgba(30,64,175,.98));
+    color:white;
+    font-weight:600;
+    text-align:center;
+    display:block;
+    transition:.18s ease;
+  }
 
-a.secondary{
-  background:#fff;
-  color:var(--ink);
-  border:1px solid var(--line);
-}
+  a.button:hover{
+    transform:translateY(-1px);
+    box-shadow:0 10px 24px rgba(29,78,216,.18);
+  }
 
-.section{
-  margin-top:40px;
-}
+  .underCta{
+    text-align:center;
+    font-size:12px;
+    color:var(--muted);
+    margin-top:-6px;
+  }
 
-.section h3{
-  margin:0 0 14px;
-}
+  .underCta a{
+    color:var(--lux2);
+    text-decoration:none;
+    border-bottom:1px solid rgba(51,65,85,.35);
+    padding-bottom:1px;
+  }
 
-.instagramWrap{
-  border:1px solid var(--line);
-  border-radius:16px;
-  padding:16px;
-  background:#fafcff;
-}
+  .underCta a:hover{ border-bottom-color: rgba(51,65,85,.7); }
 
-.fine{
-  margin-top:12px;
-  font-size:11px;
-  color:var(--muted);
-  line-height:1.5;
-}
+  a.secondary{
+    background:#fff;
+    color:var(--ink);
+    border:1px solid var(--line);
+  }
 
-@media (max-width:560px){
-  body{ padding:26px 12px; }
-  .card{ padding:20px; }
-  .photoWrap{ width:130px; }
-  .logoImg{ width:170px; }
-}
+  .serviceLine{
+    margin-top:18px;
+    font-size:14px;
+    color:var(--muted);
+    line-height:1.6;
+  }
+
+  .expertise{
+    margin-top:24px;
+    font-size:14px;
+    color:var(--muted);
+    line-height:1.9;
+  }
+
+  .expertise strong{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+    color:var(--ink);
+  }
+
+  .section{
+    margin-top:34px;
+  }
+
+  .sectionHeader{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:14px;
+    margin-bottom:14px;
+    flex-wrap:wrap;
+  }
+
+  .sectionHeader h3{
+    margin:0;
+    font-size:18px;
+    color:var(--lux);
+    letter-spacing:.2px;
+  }
+
+  .sectionHeader a{
+    font-size:12px;
+    color:var(--lux2);
+    text-decoration:none;
+    border-bottom:1px solid rgba(51,65,85,.35);
+    padding-bottom:1px;
+  }
+
+  .sectionHeader a:hover{ border-bottom-color: rgba(51,65,85,.7); }
+
+  /* Luxury IG grid */
+  .igGrid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:14px;
+  }
+
+  .igCard{
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:14px 14px 6px;
+    background:linear-gradient(180deg,#ffffff 0%, #fbfcff 100%);
+    box-shadow:0 18px 40px rgba(15,23,42,.06);
+    overflow:hidden;
+  }
+
+  /* Instagram embed tends to be wide; keep it nicely contained */
+  .igCard blockquote.instagram-media{
+    margin:0 auto !important;
+    width:100% !important;
+    max-width:540px !important;
+    min-width:0 !important;
+  }
+
+  .fine{
+    margin-top:16px;
+    font-size:11px;
+    color:var(--muted);
+    line-height:1.5;
+  }
+
+  @media (max-width:860px){
+    .igGrid{ grid-template-columns:1fr; }
+  }
+
+  @media (max-width:560px){
+    body{ padding:26px 12px; }
+    .card{ padding:20px; }
+    .photoWrap{ width:130px; }
+    .logoImg{ width:280px; }
+    .delicate{ font-size:19px; }
+  }
 </style>
 </head>
 
 <body>
 <div class="container">
-<div class="card">
+  <div class="card">
 
-  <div class="topRow">
-    <div>
-      <img class="logoImg" src="images/Logo.jpg" alt="Practice logo">
-      <div class="tagline">Child & Adolescent Therapy · Rhode Island</div>
+    <div class="topRow">
+      <div>
+        <!-- images MUST be in /images and filenames are case-sensitive on GitHub Pages -->
+        <img class="logoImg" src="images/Logo.jpg" alt="Practice logo">
+        <div class="tagline">Child &amp; Adolescent Therapy · Rhode Island</div>
+      </div>
+
+      <div class="photoWrap">
+        <img class="photo" src="images/jess.jpg" alt="Jess Devereaux">
+      </div>
     </div>
 
-    <div class="photoWrap">
-      <img class="photo" src="images/jess.jpg" alt="Jess Devereaux">
+    <p class="delicate">
+      I work with children and adolescents in Rhode Island navigating anxiety, mood concerns, school stress, social challenges, and life transitions.
+      They deserve a safe and supportive space to explore their emotions, strengthen coping skills, and grow in confidence.
+    </p>
+
+    <p>
+      Therapy is tailored to each child’s age, strengths, and needs. With younger children, sessions may include play and creative activities.
+      With teens, therapy focuses on insight, skill-building, and open discussion. I also partner with parents to reinforce progress and support emotional growth at home.
+    </p>
+
+    <p>
+      With 13 years of experience as a school counselor, I specialize in anxiety, mood concerns, emotional regulation, and school-related stress.
+      My approach integrates CBT, solution-focused strategies, and mindfulness to build resilience and lasting skills.
+    </p>
+
+    <div class="links">
+      <a class="button" href="https://jess-devereaux.clientsecure.me/contact-widget" target="_blank" rel="noopener">
+        Contact Jess Securely
+      </a>
+
+      <!-- NEW: SimplePractice portal link under the main contact button -->
+      <div class="underCta">
+        Or visit her SimplePractice portal:
+        <a href="https://jess-devereaux.clientsecure.me/" target="_blank" rel="noopener">jess-devereaux.clientsecure.me</a>
+      </div>
+
+      <a class="button secondary" href="https://www.psychologytoday.com/us/therapists/jess-devereaux-cranston-ri/1637415" target="_blank" rel="noopener">
+        View Psychology Today Profile
+      </a>
     </div>
-  </div>
 
-  <p class="delicate">
-    I work with children and adolescents in Rhode Island navigating anxiety, mood concerns, school stress, social challenges, and life transitions.
-    They deserve a safe and supportive space to explore their emotions, strengthen coping skills, and grow in confidence.
-  </p>
+    <div class="serviceLine">
+      Serving families in Cranston and throughout Rhode Island (in-person + telehealth).
+    </div>
 
-  <p>
-    Therapy is tailored to each child’s age, strengths, and needs. With younger children, sessions may include play and creative activities.
-    With teens, therapy focuses on insight, skill-building, and open discussion. I also partner with parents to reinforce progress and support emotional growth at home.
-  </p>
+    <div class="expertise">
+      <strong>Specialties &amp; Expertise</strong>
+      ADHD · Anxiety · Behavioral Issues · Body Image · Child · Depression · Education and Learning Disabilities · LGBTQ+ · Life Transitions · Parenting · Peer Relationships · School Issues · Self Esteem · Stress · Testing and Evaluation
+    </div>
 
-  <div class="links">
-    <a class="button" href="https://jess-devereaux.clientsecure.me/contact-widget" target="_blank">
-      Contact Jess Securely
-    </a>
+    <!-- Instagram (3-post luxury grid) -->
+    <div class="section">
+      <div class="sectionHeader">
+        <h3>On Instagram</h3>
+        <a href="https://www.instagram.com/jessdevereauxlmhc/" target="_blank" rel="noopener">Follow @jessdevereauxlmhc</a>
+      </div>
 
-    <a class="button secondary" href="https://www.psychologytoday.com/us/therapists/jess-devereaux-cranston-ri/1637415" target="_blank">
-      View Psychology Today Profile
-    </a>
+      <div class="igGrid">
+        <div class="igCard">
+          <!-- Replace with a real post URL: https://www.instagram.com/p/XXXXXXXXXXX/ -->
+          <blockquote class="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/p/POST_1_ID_HERE/"
+            data-instgrm-version="14">
+          </blockquote>
+        </div>
 
-    <a class="button secondary" href="https://www.instagram.com/jessdevereauxlmhc/" target="_blank">
-      Follow on Instagram
-    </a>
-  </div>
+        <div class="igCard">
+          <blockquote class="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/p/POST_2_ID_HERE/"
+            data-instgrm-version="14">
+          </blockquote>
+        </div>
 
-  <!-- Instagram Section -->
-  <div class="section">
-    <h3>Latest from Instagram</h3>
+        <div class="igCard">
+          <blockquote class="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/p/POST_3_ID_HERE/"
+            data-instgrm-version="14">
+          </blockquote>
+        </div>
+      </div>
 
-    <div class="instagramWrap">
-
-      <!-- Replace THIS link with the direct link to her latest POST -->
-      <!-- Example: https://www.instagram.com/p/POSTID/ -->
-
-      <blockquote class="instagram-media"
-        data-instgrm-permalink="https://www.instagram.com/p/DU0rIuAkXM8/"
-        data-instgrm-version="14"
-        style="background:#FFF; border:0; margin:0 auto; max-width:540px;">
-      </blockquote>
+      <div class="fine">
+        To update the “3 recent posts,” paste the URLs of her latest three Instagram posts into the three <code>data-instgrm-permalink</code> lines above.
+      </div>
 
       <script async src="//www.instagram.com/embed.js"></script>
-
     </div>
+
+    <div class="fine">
+      Please do not include sensitive clinical details or crisis information in a web inquiry.
+      If you are in crisis, call 988 or your local emergency number.
+    </div>
+
   </div>
-
-  <div class="fine">
-    Please do not include sensitive clinical details or crisis information in a web inquiry.
-    If you are in crisis, call 988 or your local emergency number.
-  </div>
-
 </div>
-</div>
-
 </body>
 </html>
