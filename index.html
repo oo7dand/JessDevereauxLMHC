@@ -61,6 +61,7 @@
     min-width:0;
   }
 
+  /* Luxe box for logo */
   .brandBox{
     height:100%;
     padding:18px 18px 14px;
@@ -75,15 +76,24 @@
     justify-content:center;
   }
 
+  /* KEY FIX #1: Make logo "fill" the left area even if the image file has huge white margins.
+     This crops/zooms the logo slightly to remove wasted whitespace. */
+  .logoCrop{
+    height:170px;                 /* controls how tall the logo area feels */
+    border-radius:18px;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
   .logoImg{
-    display:block;
     width:100%;
-    max-width:100%;
-    height:auto;
-    max-height:250px;
+    height:100%;
     object-fit:contain;
-    border-radius:16px;
-    margin:0 auto;
+    transform:scale(1.55);        /* zoom in to kill the big internal whitespace */
+    transform-origin:center;
+    display:block;
   }
 
   .tagline{
@@ -102,14 +112,14 @@
     padding:12px;
   }
 
-  /* FIX: no more head cut-off */
+  /* KEY FIX #2: head was getting cut off — show more of the top */
   .photo{
     width:100%;
     height:100%;
     display:block;
     border-radius:18px;
     object-fit:cover;
-    object-position:50% 20%; /* shift framing downward so head stays visible */
+    object-position:50% 8%;       /* move frame UP to include head */
     aspect-ratio:1/1;
     border:1px solid rgba(148,163,184,.35);
     background:#eef2ff;
@@ -135,7 +145,7 @@
     display:flex;
     flex-direction:column;
     gap:12px;
-    max-width:520px;
+    max-width:560px;
   }
 
   a.button{
@@ -276,7 +286,8 @@
 
   @media (max-width:900px){
     .photoWrap{ flex-basis:230px; }
-    .logoImg{ max-height:240px; }
+    .logoCrop{ height:160px; }
+    .logoImg{ transform:scale(1.45); }
   }
 
   @media (max-width:760px){
@@ -289,6 +300,8 @@
     body{ padding:26px 12px; }
     .card{ padding:20px; }
     .photoWrap{ flex:0 0 190px; }
+    .logoCrop{ height:150px; }
+    .logoImg{ transform:scale(1.35); }
   }
 </style>
 </head>
@@ -300,10 +313,12 @@
     <div class="topRow">
       <div class="brandCol">
         <div class="brandBox">
-          <img class="logoImg"
-               src="images/Logo.jpg"
-               alt="Practice logo"
-               onerror="this.onerror=null; this.src='images/logo.jpg';">
+          <div class="logoCrop">
+            <img class="logoImg"
+                 src="images/Logo.jpg"
+                 alt="Practice logo"
+                 onerror="this.onerror=null; this.src='images/logo.jpg';">
+          </div>
           <div class="tagline">Child &amp; Adolescent Therapy · Rhode Island</div>
         </div>
       </div>
@@ -336,7 +351,6 @@
         Contact Jess Securely
       </a>
 
-      <!-- FIX: replace the "or visit her yada yada" text with a clean matching button -->
       <a class="button secondary" href="https://jess-devereaux.clientsecure.me/" target="_blank" rel="noopener">
         Website / Client Portal
       </a>
