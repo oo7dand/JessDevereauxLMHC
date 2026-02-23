@@ -58,8 +58,8 @@
 
   /* MUCH bigger logo */
   .logoImg{
-    width:340px;
-    max-width:80vw;
+    width:360px;
+    max-width:85vw;
     height:auto;
     display:block;
     border-radius:16px;
@@ -174,6 +174,7 @@
     color:var(--ink);
   }
 
+  /* Luxury IG gallery */
   .section{
     margin-top:34px;
   }
@@ -204,28 +205,63 @@
 
   .sectionHeader a:hover{ border-bottom-color: rgba(51,65,85,.7); }
 
-  /* Luxury IG grid */
   .igGrid{
     display:grid;
     grid-template-columns: repeat(3, 1fr);
     gap:14px;
   }
 
-  .igCard{
-    border:1px solid var(--line);
+  .igTile{
+    position:relative;
     border-radius:18px;
-    padding:14px 14px 6px;
-    background:linear-gradient(180deg,#ffffff 0%, #fbfcff 100%);
-    box-shadow:0 18px 40px rgba(15,23,42,.06);
     overflow:hidden;
+    border:1px solid var(--line);
+    background:#f1f5ff;
+    box-shadow:0 18px 40px rgba(15,23,42,.06);
+    aspect-ratio: 1 / 1;
   }
 
-  /* Instagram embed tends to be wide; keep it nicely contained */
-  .igCard blockquote.instagram-media{
-    margin:0 auto !important;
-    width:100% !important;
-    max-width:540px !important;
-    min-width:0 !important;
+  .igTile img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transform:scale(1.01);
+    transition:transform .25s ease;
+  }
+
+  .igTile:hover img{
+    transform:scale(1.06);
+  }
+
+  .igOverlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg, rgba(15,23,42,0) 45%, rgba(15,23,42,.45) 100%);
+    opacity:.9;
+    pointer-events:none;
+  }
+
+  .igLabel{
+    position:absolute;
+    left:12px;
+    bottom:12px;
+    color:#fff;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:.2px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    text-shadow:0 8px 18px rgba(0,0,0,.25);
+  }
+
+  .igDot{
+    width:8px;
+    height:8px;
+    border-radius:99px;
+    background:rgba(255,255,255,.9);
+    box-shadow:0 6px 14px rgba(0,0,0,.18);
   }
 
   .fine{
@@ -243,7 +279,7 @@
     body{ padding:26px 12px; }
     .card{ padding:20px; }
     .photoWrap{ width:130px; }
-    .logoImg{ width:280px; }
+    .logoImg{ width:300px; }
     .delicate{ font-size:19px; }
   }
 </style>
@@ -255,7 +291,6 @@
 
     <div class="topRow">
       <div>
-        <!-- images MUST be in /images and filenames are case-sensitive on GitHub Pages -->
         <img class="logoImg" src="images/Logo.jpg" alt="Practice logo">
         <div class="tagline">Child &amp; Adolescent Therapy · Rhode Island</div>
       </div>
@@ -285,7 +320,6 @@
         Contact Jess Securely
       </a>
 
-      <!-- NEW: SimplePractice portal link under the main contact button -->
       <div class="underCta">
         Or visit her SimplePractice portal:
         <a href="https://jess-devereaux.clientsecure.me/" target="_blank" rel="noopener">jess-devereaux.clientsecure.me</a>
@@ -305,7 +339,7 @@
       ADHD · Anxiety · Behavioral Issues · Body Image · Child · Depression · Education and Learning Disabilities · LGBTQ+ · Life Transitions · Parenting · Peer Relationships · School Issues · Self Esteem · Stress · Testing and Evaluation
     </div>
 
-    <!-- Instagram (3-post luxury grid) -->
+    <!-- Instagram (Luxury 3-image grid) -->
     <div class="section">
       <div class="sectionHeader">
         <h3>On Instagram</h3>
@@ -313,34 +347,30 @@
       </div>
 
       <div class="igGrid">
-        <div class="igCard">
-          <!-- Replace with a real post URL: https://www.instagram.com/p/XXXXXXXXXXX/ -->
-          <blockquote class="instagram-media"
-            data-instgrm-permalink="https://www.instagram.com/p/POST_1_ID_HERE/"
-            data-instgrm-version="14">
-          </blockquote>
-        </div>
+        <!-- Replace the href with the IG post URL, and the img src with your local image file -->
+        <a class="igTile" href="https://www.instagram.com/jessdevereauxlmhc/" target="_blank" rel="noopener" aria-label="Instagram post 1">
+          <img src="images/ig1.jpg" alt="Instagram post preview 1">
+          <div class="igOverlay"></div>
+          <div class="igLabel"><span class="igDot"></span>View on Instagram</div>
+        </a>
 
-        <div class="igCard">
-          <blockquote class="instagram-media"
-            data-instgrm-permalink="https://www.instagram.com/p/POST_2_ID_HERE/"
-            data-instgrm-version="14">
-          </blockquote>
-        </div>
+        <a class="igTile" href="https://www.instagram.com/jessdevereauxlmhc/" target="_blank" rel="noopener" aria-label="Instagram post 2">
+          <img src="images/ig2.jpg" alt="Instagram post preview 2">
+          <div class="igOverlay"></div>
+          <div class="igLabel"><span class="igDot"></span>View on Instagram</div>
+        </a>
 
-        <div class="igCard">
-          <blockquote class="instagram-media"
-            data-instgrm-permalink="https://www.instagram.com/p/POST_3_ID_HERE/"
-            data-instgrm-version="14">
-          </blockquote>
-        </div>
+        <a class="igTile" href="https://www.instagram.com/jessdevereauxlmhc/" target="_blank" rel="noopener" aria-label="Instagram post 3">
+          <img src="images/ig3.jpg" alt="Instagram post preview 3">
+          <div class="igOverlay"></div>
+          <div class="igLabel"><span class="igDot"></span>View on Instagram</div>
+        </a>
       </div>
 
       <div class="fine">
-        To update the “3 recent posts,” paste the URLs of her latest three Instagram posts into the three <code>data-instgrm-permalink</code> lines above.
+        Add 3 square images to <code>/images</code> named <code>ig1.jpg</code>, <code>ig2.jpg</code>, <code>ig3.jpg</code>.
+        Update anytime by replacing those files. Each tile links to Instagram.
       </div>
-
-      <script async src="//www.instagram.com/embed.js"></script>
     </div>
 
     <div class="fine">
