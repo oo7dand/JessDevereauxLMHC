@@ -27,6 +27,7 @@
     margin:0;
     background:
       radial-gradient(1200px 600px at 15% 0%, rgba(29,78,216,.10), transparent 55%),
+      radial-gradient(1000px 520px at 85% 0%, rgba(15,23,42,.08), transparent 60%),
       linear-gradient(180deg,#f3f7ff 0%, var(--bg) 100%);
     padding:40px 16px;
     display:flex;
@@ -35,10 +36,11 @@
     color:var(--ink);
   }
 
-  .container{ width:100%; max-width:1000px; }
+  .container{ width:100%; max-width:1040px; }
+
   .card{
     background:var(--card);
-    border-radius:22px;
+    border-radius:24px;
     padding:34px;
     border:1px solid var(--line);
     box-shadow:var(--shadow);
@@ -47,55 +49,69 @@
   /* ===== Header ===== */
   .topRow{
     display:flex;
-    align-items:center;
+    align-items:stretch;
     justify-content:space-between;
     gap:26px;
     flex-wrap:nowrap;
-    margin-bottom:22px;
+    margin-bottom:24px;
   }
 
-  .logoWrap{
+  .brandCol{
     flex:1 1 auto;
     min-width:0;
   }
 
-  /*
-    Logo is as big as possible WITHOUT wrapping:
-    - We reserve a fixed column for the photo (220px)
-    - Logo takes the remaining width
-    - Logo height is capped so it doesn't dominate vertically
-    NOTE: If your logo image has a lot of white padding inside it, you'll still see whitespace.
-  */
+  .brandBox{
+    height:100%;
+    padding:18px 18px 14px;
+    border-radius:22px;
+    border:1px solid rgba(148,163,184,.30);
+    background:
+      radial-gradient(800px 380px at 20% 0%, rgba(29,78,216,.10), transparent 55%),
+      linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    box-shadow:0 16px 44px rgba(15,23,42,.06);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+
   .logoImg{
     display:block;
     width:100%;
     max-width:100%;
     height:auto;
-    max-height:240px;            /* keep header tight */
+    max-height:250px;
     object-fit:contain;
     border-radius:16px;
+    margin:0 auto;
   }
 
   .tagline{
-    margin-top:10px;
-    font-size:14px;
+    margin-top:12px;
+    font-size:13px;
     color:var(--muted);
-    letter-spacing:.2px;
+    letter-spacing:.25px;
   }
 
   .photoWrap{
-    flex:0 0 220px;              /* fixed width keeps logo+photo on one row */
+    flex:0 0 260px;
+    border-radius:22px;
+    border:1px solid rgba(148,163,184,.30);
+    background:linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    box-shadow:0 16px 44px rgba(15,23,42,.06);
+    padding:12px;
   }
 
+  /* FIX: no more head cut-off */
   .photo{
     width:100%;
-    height:auto;
+    height:100%;
     display:block;
-    border-radius:20px;
+    border-radius:18px;
     object-fit:cover;
+    object-position:50% 20%; /* shift framing downward so head stays visible */
     aspect-ratio:1/1;
-    border:1px solid var(--line);
-    box-shadow:0 16px 34px rgba(15,23,42,.10);
+    border:1px solid rgba(148,163,184,.35);
     background:#eef2ff;
   }
 
@@ -119,6 +135,7 @@
     display:flex;
     flex-direction:column;
     gap:12px;
+    max-width:520px;
   }
 
   a.button{
@@ -139,17 +156,10 @@
     box-shadow:0 10px 24px rgba(29,78,216,.18);
   }
 
-  .underCta{
-    text-align:center;
-    font-size:12px;
-    color:var(--muted);
-    margin-top:-4px;
-  }
-
-  .underCta a{
-    color:#334155;
-    text-decoration:none;
-    border-bottom:1px solid rgba(51,65,85,.35);
+  a.secondary{
+    background:#fff;
+    color:var(--ink);
+    border:1px solid var(--line);
   }
 
   .serviceLine{
@@ -212,7 +222,7 @@
     border:1px solid var(--line);
     background:linear-gradient(180deg,#ffffff 0%, #fbfcff 100%);
     box-shadow:0 18px 40px rgba(15,23,42,.06);
-    aspect-ratio: 1 / 1;
+    aspect-ratio:1/1;
     display:block;
   }
 
@@ -258,31 +268,27 @@
   }
 
   .fine{
-    margin-top:14px;
+    margin-top:16px;
     font-size:11px;
     color:var(--muted);
     line-height:1.5;
   }
 
-  .fine code{
-    font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    font-size:11px;
-  }
-
   @media (max-width:900px){
-    .photoWrap{ flex-basis:190px; }
-    .logoImg{ max-height:220px; }
+    .photoWrap{ flex-basis:230px; }
+    .logoImg{ max-height:240px; }
   }
 
   @media (max-width:760px){
     .topRow{ flex-wrap:wrap; }
-    .photoWrap{ flex:0 0 170px; }
+    .photoWrap{ flex:0 0 220px; }
     .igGrid{ grid-template-columns:1fr; }
   }
 
   @media (max-width:560px){
     body{ padding:26px 12px; }
     .card{ padding:20px; }
+    .photoWrap{ flex:0 0 190px; }
   }
 </style>
 </head>
@@ -292,19 +298,19 @@
   <div class="card">
 
     <div class="topRow">
-      <div class="logoWrap">
-        <!-- Case-sensitive fallbacks for GitHub Pages -->
-        <img class="logoImg"
-             src="images/Logo.jpg"
-             alt="Practice logo"
-             onerror="this.onerror=null; this.src='images/logo.jpg';">
-        <div class="tagline">Child &amp; Adolescent Therapy · Rhode Island</div>
+      <div class="brandCol">
+        <div class="brandBox">
+          <img class="logoImg"
+               src="images/Logo.jpg"
+               alt="Practice logo"
+               onerror="this.onerror=null; this.src='images/logo.jpg';">
+          <div class="tagline">Child &amp; Adolescent Therapy · Rhode Island</div>
+        </div>
       </div>
 
       <div class="photoWrap">
-        <!-- Case-sensitive fallbacks for GitHub Pages -->
         <img class="photo"
-             src="images/Jess.png"
+             src="images/jess.jpg"
              alt="Jess Devereaux"
              onerror="this.onerror=null; this.src='images/Jess.jpg';">
       </div>
@@ -330,14 +336,12 @@
         Contact Jess Securely
       </a>
 
-      <div class="underCta">
-        Or visit her SimplePractice portal:
-        <a href="https://jess-devereaux.clientsecure.me/" target="_blank" rel="noopener">jess-devereaux.clientsecure.me</a>
-      </div>
+      <!-- FIX: replace the "or visit her yada yada" text with a clean matching button -->
+      <a class="button secondary" href="https://jess-devereaux.clientsecure.me/" target="_blank" rel="noopener">
+        Website / Client Portal
+      </a>
 
-      <a class="button" style="background:#fff;color:var(--ink);border:1px solid var(--line);"
-         href="https://www.psychologytoday.com/us/therapists/jess-devereaux-cranston-ri/1637415"
-         target="_blank" rel="noopener">
+      <a class="button secondary" href="https://www.psychologytoday.com/us/therapists/jess-devereaux-cranston-ri/1637415" target="_blank" rel="noopener">
         View Psychology Today Profile
       </a>
     </div>
@@ -358,7 +362,6 @@
       </div>
 
       <div class="igGrid">
-        <!-- These images must exist in /images OR the tiles will auto-hide -->
         <a class="igTile" href="https://www.instagram.com/jessdevereauxlmhc/" target="_blank" rel="noopener" aria-label="Instagram preview 1">
           <img src="images/ig1.jpg" alt="Instagram preview 1">
           <div class="igOverlay"></div>
@@ -377,11 +380,6 @@
           <div class="igLabel"><span class="igDot"></span>View on Instagram</div>
         </a>
       </div>
-
-      <div class="fine">
-        Put 3 square images in <code>/images</code> named <code>ig1.jpg</code>, <code>ig2.jpg</code>, <code>ig3.jpg</code>.
-        (If any are missing, that tile will disappear automatically.)
-      </div>
     </div>
 
     <div class="fine">
@@ -393,22 +391,13 @@
 </div>
 
 <script>
-  // Hide any instagram tile whose image fails to load (prevents the broken-image placeholders)
+  // Hide any instagram tile whose image fails to load (prevents broken-image placeholders)
   document.querySelectorAll('.igTile img').forEach(img => {
     img.addEventListener('error', () => {
       const tile = img.closest('.igTile');
       if (tile) tile.style.display = 'none';
     }, { once: true });
   });
-
-  // Optional: if headshot fails, remove the empty box instead of showing a broken image icon
-  const headshot = document.querySelector('.photo');
-  if (headshot){
-    headshot.addEventListener('error', () => {
-      const wrap = headshot.closest('.photoWrap');
-      if (wrap) wrap.style.display = 'none';
-    }, { once: true });
-  }
 </script>
 
 </body>
