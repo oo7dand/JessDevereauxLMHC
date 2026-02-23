@@ -11,210 +11,405 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --bg:#f7f9fd;
-  --ink:#1f2430;
-  --muted:#6b7280;
-  --accent:#1d4ed8;
-  --line:rgba(148,163,184,.35);
-  --card:#ffffff;
-}
+  :root{
+    --bg:#f7f9fd;
+    --ink:#1f2430;
+    --muted:#6b7280;
+    --accent:#1d4ed8;
+    --line:rgba(148,163,184,.35);
+    --card:#ffffff;
+    --shadow:0 22px 70px rgba(0,0,0,.07);
+  }
 
-*{box-sizing:border-box}
+  *{box-sizing:border-box}
 
-body{
-  margin:0;
-  background:
-    radial-gradient(1200px 600px at 15% 0%, rgba(29,78,216,.10), transparent 55%),
-    linear-gradient(180deg,#f3f7ff 0%, var(--bg) 100%);
-  padding:40px 16px;
-  display:flex;
-  justify-content:center;
-  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-  color:var(--ink);
-}
+  body{
+    margin:0;
+    background:
+      radial-gradient(1200px 600px at 15% 0%, rgba(29,78,216,.10), transparent 55%),
+      linear-gradient(180deg,#f3f7ff 0%, var(--bg) 100%);
+    padding:40px 16px;
+    display:flex;
+    justify-content:center;
+    font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+    color:var(--ink);
+  }
 
-.container{ width:100%; max-width:1000px; }
+  .container{ width:100%; max-width:1000px; }
+  .card{
+    background:var(--card);
+    border-radius:22px;
+    padding:34px;
+    border:1px solid var(--line);
+    box-shadow:var(--shadow);
+  }
 
-.card{
-  background:var(--card);
-  border-radius:22px;
-  padding:34px;
-  border:1px solid var(--line);
-  box-shadow:0 22px 70px rgba(0,0,0,.07);
-}
-
-/* HEADER LAYOUT */
-.topRow{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:28px;
-  margin-bottom:22px;
-  flex-wrap:nowrap; /* prevents stacking */
-}
-
-/* Logo takes remaining width */
-.logoWrap{
-  flex:1;
-  min-width:0;
-}
-
-.logoImg{
-  width:100%;
-  max-width:100%;
-  height:auto;
-  display:block;
-  object-fit:contain;
-}
-
-.tagline{
-  margin-top:12px;
-  font-size:14px;
-  color:var(--muted);
-}
-
-/* Photo fixed width so layout never breaks */
-.photoWrap{
-  flex:0 0 210px;
-}
-
-.photo{
-  width:100%;
-  border-radius:20px;
-  object-fit:cover;
-  aspect-ratio:1/1;
-  border:1px solid var(--line);
-  box-shadow:0 16px 34px rgba(15,23,42,.10);
-}
-
-/* Body */
-.delicate{
-  font-family:"Cormorant Garamond", serif;
-  font-size:20px;
-  line-height:1.9;
-  margin-bottom:18px;
-}
-
-p{
-  font-size:15px;
-  line-height:1.75;
-  margin-bottom:18px;
-}
-
-.links{
-  margin-top:24px;
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-}
-
-a.button{
-  text-decoration:none;
-  padding:15px 18px;
-  border-radius:14px;
-  background:linear-gradient(145deg, rgba(29,78,216,.98), rgba(30,64,175,.98));
-  color:white;
-  font-weight:600;
-  text-align:center;
-  display:block;
-  transition:.18s ease;
-}
-
-a.button:hover{
-  transform:translateY(-1px);
-  box-shadow:0 10px 24px rgba(29,78,216,.18);
-}
-
-.underCta{
-  text-align:center;
-  font-size:12px;
-  color:var(--muted);
-  margin-top:-4px;
-}
-
-.underCta a{
-  color:#334155;
-  text-decoration:none;
-  border-bottom:1px solid rgba(51,65,85,.35);
-}
-
-.serviceLine{
-  margin-top:18px;
-  font-size:14px;
-  color:var(--muted);
-}
-
-.expertise{
-  margin-top:24px;
-  font-size:14px;
-  color:var(--muted);
-  line-height:1.9;
-}
-
-.expertise strong{
-  display:block;
-  margin-bottom:8px;
-  color:var(--ink);
-}
-
-@media (max-width:760px){
+  /* ===== Header ===== */
   .topRow{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:26px;
+    flex-wrap:nowrap;
+    margin-bottom:22px;
+  }
+
+  .logoWrap{
+    flex:1 1 auto;
+    min-width:0;
+  }
+
+  /*
+    Logo is as big as possible WITHOUT wrapping:
+    - We reserve a fixed column for the photo (220px)
+    - Logo takes the remaining width
+    - Logo height is capped so it doesn't dominate vertically
+    NOTE: If your logo image has a lot of white padding inside it, you'll still see whitespace.
+  */
+  .logoImg{
+    display:block;
+    width:100%;
+    max-width:100%;
+    height:auto;
+    max-height:240px;            /* keep header tight */
+    object-fit:contain;
+    border-radius:16px;
+  }
+
+  .tagline{
+    margin-top:10px;
+    font-size:14px;
+    color:var(--muted);
+    letter-spacing:.2px;
+  }
+
+  .photoWrap{
+    flex:0 0 220px;              /* fixed width keeps logo+photo on one row */
+  }
+
+  .photo{
+    width:100%;
+    height:auto;
+    display:block;
+    border-radius:20px;
+    object-fit:cover;
+    aspect-ratio:1/1;
+    border:1px solid var(--line);
+    box-shadow:0 16px 34px rgba(15,23,42,.10);
+    background:#eef2ff;
+  }
+
+  /* ===== Body ===== */
+  .delicate{
+    font-family:"Cormorant Garamond", serif;
+    font-size:20px;
+    line-height:1.9;
+    margin:0 0 18px;
+    color:#2b3445;
+  }
+
+  p{
+    font-size:15px;
+    line-height:1.75;
+    margin:0 0 18px;
+  }
+
+  .links{
+    margin-top:24px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+
+  a.button{
+    text-decoration:none;
+    padding:15px 18px;
+    border-radius:14px;
+    border:1px solid rgba(37,99,235,.22);
+    background:linear-gradient(145deg, rgba(29,78,216,.98), rgba(30,64,175,.98));
+    color:white;
+    font-weight:600;
+    text-align:center;
+    display:block;
+    transition:.18s ease;
+  }
+
+  a.button:hover{
+    transform:translateY(-1px);
+    box-shadow:0 10px 24px rgba(29,78,216,.18);
+  }
+
+  .underCta{
+    text-align:center;
+    font-size:12px;
+    color:var(--muted);
+    margin-top:-4px;
+  }
+
+  .underCta a{
+    color:#334155;
+    text-decoration:none;
+    border-bottom:1px solid rgba(51,65,85,.35);
+  }
+
+  .serviceLine{
+    margin-top:18px;
+    font-size:14px;
+    color:var(--muted);
+  }
+
+  .expertise{
+    margin-top:24px;
+    font-size:14px;
+    color:var(--muted);
+    line-height:1.9;
+  }
+
+  .expertise strong{
+    display:block;
+    margin-bottom:8px;
+    color:var(--ink);
+  }
+
+  /* ===== Instagram (3 image grid) ===== */
+  .section{
+    margin-top:34px;
+  }
+
+  .sectionHeader{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:14px;
+    margin-bottom:14px;
     flex-wrap:wrap;
   }
-  .photoWrap{
-    flex:0 0 160px;
+
+  .sectionHeader h3{
+    margin:0;
+    font-size:18px;
+    letter-spacing:.2px;
   }
-}
+
+  .sectionHeader a{
+    font-size:12px;
+    color:#334155;
+    text-decoration:none;
+    border-bottom:1px solid rgba(51,65,85,.35);
+    padding-bottom:1px;
+  }
+
+  .igGrid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:14px;
+  }
+
+  .igTile{
+    position:relative;
+    border-radius:18px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    background:linear-gradient(180deg,#ffffff 0%, #fbfcff 100%);
+    box-shadow:0 18px 40px rgba(15,23,42,.06);
+    aspect-ratio: 1 / 1;
+    display:block;
+  }
+
+  .igTile img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transform:scale(1.01);
+    transition:transform .25s ease;
+  }
+
+  .igTile:hover img{ transform:scale(1.06); }
+
+  .igOverlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg, rgba(15,23,42,0) 45%, rgba(15,23,42,.45) 100%);
+    opacity:.95;
+    pointer-events:none;
+  }
+
+  .igLabel{
+    position:absolute;
+    left:12px;
+    bottom:12px;
+    color:#fff;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:.2px;
+    text-shadow:0 8px 18px rgba(0,0,0,.25);
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+
+  .igDot{
+    width:8px;
+    height:8px;
+    border-radius:99px;
+    background:rgba(255,255,255,.92);
+    box-shadow:0 6px 14px rgba(0,0,0,.18);
+  }
+
+  .fine{
+    margin-top:14px;
+    font-size:11px;
+    color:var(--muted);
+    line-height:1.5;
+  }
+
+  .fine code{
+    font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size:11px;
+  }
+
+  @media (max-width:900px){
+    .photoWrap{ flex-basis:190px; }
+    .logoImg{ max-height:220px; }
+  }
+
+  @media (max-width:760px){
+    .topRow{ flex-wrap:wrap; }
+    .photoWrap{ flex:0 0 170px; }
+    .igGrid{ grid-template-columns:1fr; }
+  }
+
+  @media (max-width:560px){
+    body{ padding:26px 12px; }
+    .card{ padding:20px; }
+  }
 </style>
 </head>
 
 <body>
 <div class="container">
-<div class="card">
+  <div class="card">
 
-  <div class="topRow">
-    <div class="logoWrap">
-      <img class="logoImg" src="images/Logo.jpg" alt="Practice logo">
-      <div class="tagline">Child & Adolescent Therapy · Rhode Island</div>
+    <div class="topRow">
+      <div class="logoWrap">
+        <!-- Case-sensitive fallbacks for GitHub Pages -->
+        <img class="logoImg"
+             src="images/Logo.jpg"
+             alt="Practice logo"
+             onerror="this.onerror=null; this.src='images/logo.jpg';">
+        <div class="tagline">Child &amp; Adolescent Therapy · Rhode Island</div>
+      </div>
+
+      <div class="photoWrap">
+        <!-- Case-sensitive fallbacks for GitHub Pages -->
+        <img class="photo"
+             src="images/jess.jpg"
+             alt="Jess Devereaux"
+             onerror="this.onerror=null; this.src='images/Jess.jpg';">
+      </div>
     </div>
 
-    <div class="photoWrap">
-      <img class="photo" src="images/jess.jpg" alt="Jess Devereaux">
+    <p class="delicate">
+      I work with children and adolescents in Rhode Island navigating anxiety, mood concerns, school stress, social challenges, and life transitions.
+      They deserve a safe and supportive space to explore their emotions, strengthen coping skills, and grow in confidence.
+    </p>
+
+    <p>
+      Therapy is tailored to each child’s age, strengths, and needs. With younger children, sessions may include play and creative activities.
+      With teens, therapy focuses on insight, skill-building, and open discussion. I also partner with parents to reinforce progress and support emotional growth at home.
+    </p>
+
+    <p>
+      With 13 years of experience as a school counselor, I specialize in anxiety, mood concerns, emotional regulation, and school-related stress.
+      My approach integrates CBT, solution-focused strategies, and mindfulness to build resilience and lasting skills.
+    </p>
+
+    <div class="links">
+      <a class="button" href="https://jess-devereaux.clientsecure.me/contact-widget" target="_blank" rel="noopener">
+        Contact Jess Securely
+      </a>
+
+      <div class="underCta">
+        Or visit her SimplePractice portal:
+        <a href="https://jess-devereaux.clientsecure.me/" target="_blank" rel="noopener">jess-devereaux.clientsecure.me</a>
+      </div>
+
+      <a class="button" style="background:#fff;color:var(--ink);border:1px solid var(--line);"
+         href="https://www.psychologytoday.com/us/therapists/jess-devereaux-cranston-ri/1637415"
+         target="_blank" rel="noopener">
+        View Psychology Today Profile
+      </a>
     </div>
-  </div>
 
-  <p class="delicate">
-    I work with children and adolescents in Rhode Island navigating anxiety, mood concerns, school stress, social challenges, and life transitions.
-    They deserve a safe and supportive space to explore their emotions, strengthen coping skills, and grow in confidence.
-  </p>
-
-  <p>
-    Therapy is tailored to each child’s age, strengths, and needs. With younger children, sessions may include play and creative activities.
-    With teens, therapy focuses on insight, skill-building, and open discussion. I also partner with parents to reinforce progress and support emotional growth at home.
-  </p>
-
-  <div class="links">
-    <a class="button" href="https://jess-devereaux.clientsecure.me/contact-widget" target="_blank">
-      Contact Jess Securely
-    </a>
-
-    <div class="underCta">
-      Or visit her SimplePractice portal:
-      <a href="https://jess-devereaux.clientsecure.me/" target="_blank">jess-devereaux.clientsecure.me</a>
+    <div class="serviceLine">
+      Serving families in Cranston and throughout Rhode Island (in-person + telehealth).
     </div>
-  </div>
 
-  <div class="serviceLine">
-    Serving families in Cranston and throughout Rhode Island (in-person + telehealth).
-  </div>
+    <div class="expertise">
+      <strong>Specialties &amp; Expertise</strong>
+      ADHD · Anxiety · Behavioral Issues · Body Image · Child · Depression · Education and Learning Disabilities · LGBTQ+ · Life Transitions · Parenting · Peer Relationships · School Issues · Self Esteem · Stress · Testing and Evaluation
+    </div>
 
-  <div class="expertise">
-    <strong>Specialties & Expertise</strong>
-    ADHD · Anxiety · Behavioral Issues · Body Image · Child · Depression · Education and Learning Disabilities · LGBTQ+ · Life Transitions · Parenting · Peer Relationships · School Issues · Self Esteem · Stress · Testing and Evaluation
-  </div>
+    <div class="section">
+      <div class="sectionHeader">
+        <h3>On Instagram</h3>
+        <a href="https://www.instagram.com/jessdevereauxlmhc/" target="_blank" rel="noopener">Follow @jessdevereauxlmhc</a>
+      </div>
 
+      <div class="igGrid">
+        <!-- These images must exist in /images OR the tiles will auto-hide -->
+        <a class="igTile" href="https://www.instagram.com/jessdevereauxlmhc/" target="_blank" rel="noopener" aria-label="Instagram preview 1">
+          <img src="images/ig1.jpg" alt="Instagram preview 1">
+          <div class="igOverlay"></div>
+          <div class="igLabel"><span class="igDot"></span>View on Instagram</div>
+        </a>
+
+        <a class="igTile" href="https://www.instagram.com/jessdevereauxlmhc/" target="_blank" rel="noopener" aria-label="Instagram preview 2">
+          <img src="images/ig2.jpg" alt="Instagram preview 2">
+          <div class="igOverlay"></div>
+          <div class="igLabel"><span class="igDot"></span>View on Instagram</div>
+        </a>
+
+        <a class="igTile" href="https://www.instagram.com/jessdevereauxlmhc/" target="_blank" rel="noopener" aria-label="Instagram preview 3">
+          <img src="images/ig3.jpg" alt="Instagram preview 3">
+          <div class="igOverlay"></div>
+          <div class="igLabel"><span class="igDot"></span>View on Instagram</div>
+        </a>
+      </div>
+
+      <div class="fine">
+        Put 3 square images in <code>/images</code> named <code>ig1.jpg</code>, <code>ig2.jpg</code>, <code>ig3.jpg</code>.
+        (If any are missing, that tile will disappear automatically.)
+      </div>
+    </div>
+
+    <div class="fine">
+      Please do not include sensitive clinical details or crisis information in a web inquiry.
+      If you are in crisis, call 988 or your local emergency number.
+    </div>
+
+  </div>
 </div>
-</div>
+
+<script>
+  // Hide any instagram tile whose image fails to load (prevents the broken-image placeholders)
+  document.querySelectorAll('.igTile img').forEach(img => {
+    img.addEventListener('error', () => {
+      const tile = img.closest('.igTile');
+      if (tile) tile.style.display = 'none';
+    }, { once: true });
+  });
+
+  // Optional: if headshot fails, remove the empty box instead of showing a broken image icon
+  const headshot = document.querySelector('.photo');
+  if (headshot){
+    headshot.addEventListener('error', () => {
+      const wrap = headshot.closest('.photoWrap');
+      if (wrap) wrap.style.display = 'none';
+    }, { once: true });
+  }
+</script>
+
 </body>
 </html>
