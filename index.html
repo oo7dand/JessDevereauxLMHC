@@ -21,6 +21,7 @@
   }
 
   *{box-sizing:border-box}
+
   body{
     margin:0;
     background:linear-gradient(180deg,#f3f7ff 0%, var(--bg) 100%);
@@ -31,10 +32,7 @@
     font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
   }
 
-  .container{
-    width:100%;
-    max-width:820px;
-  }
+  .container{ width:100%; max-width:820px; }
 
   .card{
     background:var(--card);
@@ -44,7 +42,6 @@
     box-shadow:0 20px 60px rgba(0,0,0,.06);
   }
 
-  /* Top row: logo left, photo right */
   .topRow{
     display:flex;
     align-items:flex-start;
@@ -68,10 +65,6 @@
     display:block;
     border-radius:12px;
     object-fit:contain;
-  }
-
-  .nameBlock{
-    min-width:0;
   }
 
   h1{
@@ -139,6 +132,12 @@
     font-weight:600;
     text-align:center;
     display:block;
+    transition:.2s ease;
+  }
+
+  a.button:hover{
+    transform:translateY(-1px);
+    box-shadow:0 6px 18px rgba(37,99,235,.25);
   }
 
   a.secondary{
@@ -147,8 +146,15 @@
     border:1px solid var(--line);
   }
 
+  .serviceLine{
+    margin-top:18px;
+    font-size:14px;
+    color:var(--muted);
+    line-height:1.6;
+  }
+
   .expertise{
-    margin-top:28px;
+    margin-top:24px;
     font-size:14px;
     color:var(--muted);
     line-height:1.9;
@@ -161,42 +167,26 @@
     color:var(--ink);
   }
 
-  form{
+  .contactCard{
     margin-top:28px;
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-  }
-
-  input, textarea{
-    padding:12px;
-    border-radius:10px;
+    padding:18px;
+    border-radius:16px;
     border:1px solid var(--line);
-    font-family:inherit;
-    font-size:14px;
-    width:100%;
+    background:linear-gradient(180deg,#ffffff 0%,#f9fbff 100%);
   }
 
-  textarea{ min-height:90px; resize:vertical; }
-
-  button{
-    padding:14px;
-    border:none;
-    border-radius:999px;
-    background:linear-gradient(145deg, rgba(37,99,235,.95), rgba(29,78,216,.95));
-    color:white;
-    font-weight:600;
-    cursor:pointer;
+  .contactCard h3{
+    margin:0 0 8px;
+    font-size:18px;
   }
 
   .fine{
-    margin-top:8px;
+    margin-top:10px;
     font-size:11px;
     color:var(--muted);
     line-height:1.5;
   }
 
-  /* Mobile safety */
   @media (max-width:560px){
     body{ padding:26px 12px; }
     .card{ padding:20px; }
@@ -213,18 +203,16 @@
 
     <div class="topRow">
       <div class="logoWrap">
-        <!-- ********** PLACE FILE: logo.jpg in the same folder as index.html ********** -->
-        <img class="logoImg" src="logo.jpg" alt="Practice logo">
-
-        <div class="nameBlock">
+        <!-- FIXED: images are in /images and filenames are case-sensitive on GitHub Pages -->
+        <img class="logoImg" src="images/Logo.jpg" alt="Practice logo">
+        <div>
           <h1>Jess Devereaux, LMHC</h1>
           <p class="sub">Child &amp; Adolescent Therapy · Rhode Island</p>
         </div>
       </div>
 
       <div class="photoWrap">
-        <!-- ********** PLACE FILE: jess.jpg in the same folder as index.html ********** -->
-        <img class="photo" src="jess.jpg" alt="Jess Devereaux">
+        <img class="photo" src="images/jess.jpg" alt="Jess Devereaux">
       </div>
     </div>
 
@@ -235,8 +223,7 @@
 
     <p>
       Therapy is tailored to each child’s age, strengths, and needs. With younger children, sessions may include play and creative activities.
-      With teens, therapy focuses on insight, skill-building, and open discussion. I also partner with parents to reinforce progress and support
-      emotional growth at home.
+      With teens, therapy focuses on insight, skill-building, and open discussion. I also partner with parents to reinforce progress and support emotional growth at home.
     </p>
 
     <p>
@@ -244,19 +231,22 @@
       My approach integrates CBT, solution-focused strategies, and mindfulness to build resilience and lasting skills.
     </p>
 
-    <p>
-      Starting therapy can feel overwhelming. My goal is to create a calm, understanding space for children and teens while collaborating with parents
-      to support growth. I would love to connect and see if my approach is a fit for your child and family.
-    </p>
-
     <div class="links">
-      <a class="button" href="https://jess-devereaux.clientsecure.me/" target="_blank" rel="noopener">
-        Start the Conversation
+      <a class="button" href="https://jess-devereaux.clientsecure.me/contact-widget" target="_blank" rel="noopener">
+        Contact Jess Securely
       </a>
 
-      <a class="button secondary" href="https://www.psychologytoday.com/us/therapists/jess-devereaux-cranston-ri/1637415?msockid=171f6c8beede672f3dfc7ac3ef9d6610" target="_blank" rel="noopener">
+      <a class="button secondary" href="https://jess-devereaux.clientsecure.me/" target="_blank" rel="noopener">
+        Client Portal
+      </a>
+
+      <a class="button secondary" href="https://www.psychologytoday.com/us/therapists/jess-devereaux-cranston-ri/1637415" target="_blank" rel="noopener">
         View Psychology Today Profile
       </a>
+    </div>
+
+    <div class="serviceLine">
+      Serving families in Cranston and throughout Rhode Island (in-person + telehealth).
     </div>
 
     <div class="expertise">
@@ -264,35 +254,20 @@
       ADHD · Anxiety · Behavioral Issues · Body Image · Child · Depression · Education and Learning Disabilities · LGBTQ+ · Life Transitions · Parenting · Peer Relationships · School Issues · Self Esteem · Stress · Testing and Evaluation
     </div>
 
-    <form id="emailForm">
-      <input type="text" id="name" placeholder="Your name" required>
-      <input type="email" id="email" placeholder="Your email" required>
-      <textarea id="message" placeholder="Brief message (no sensitive or crisis information)"></textarea>
-      <button type="submit">Email Jess</button>
-      <div class="fine">If you are in crisis, please call 988 or your local emergency number.</div>
-    </form>
+    <div class="contactCard">
+      <h3>Send a Message</h3>
+
+      <a class="button" href="https://jess-devereaux.clientsecure.me/contact-widget" target="_blank" rel="noopener">
+        Open Secure Contact Form
+      </a>
+
+      <div class="fine">
+        Please do not include sensitive clinical details or crisis information in a web inquiry.
+        If you are in crisis, call 988 or your local emergency number.
+      </div>
+    </div>
 
   </div>
 </div>
-
-<script>
-  // Email compose (works on GitHub Pages/static hosting)
-  const TO_EMAIL = "jessdevereauxlmhc@gmail.com";
-
-  document.getElementById("emailForm").addEventListener("submit", function(e){
-    e.preventDefault();
-    const name = (document.getElementById("name").value || "").trim();
-    const email = (document.getElementById("email").value || "").trim();
-    const message = (document.getElementById("message").value || "").trim();
-
-    const subject = encodeURIComponent("Website message (Start the Conversation)");
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n\n— sent from jessdevereauxlmhc.com landing page`
-    );
-
-    window.location.href = `mailto:${TO_EMAIL}?subject=${subject}&body=${body}`;
-  });
-</script>
-
 </body>
 </html>
