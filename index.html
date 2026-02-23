@@ -11,263 +11,209 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-  :root{
-    --bg:#f7f9fd;
-    --ink:#2b2f38;
-    --muted:#6b7280;
-    --accent:#2563eb;
-    --line:rgba(148,163,184,.35);
-    --card:#ffffff;
-  }
+:root{
+  --bg:#f7f9fd;
+  --ink:#2b2f38;
+  --muted:#6b7280;
+  --accent:#2563eb;
+  --line:rgba(148,163,184,.35);
+  --card:#ffffff;
+}
 
-  *{box-sizing:border-box}
+*{box-sizing:border-box}
 
-  body{
-    margin:0;
-    background:linear-gradient(180deg,#f3f7ff 0%, var(--bg) 100%);
-    padding:40px 16px;
-    display:flex;
-    justify-content:center;
-    color:var(--ink);
-    font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-  }
+body{
+  margin:0;
+  background:linear-gradient(180deg,#f3f7ff 0%, var(--bg) 100%);
+  padding:40px 16px;
+  display:flex;
+  justify-content:center;
+  color:var(--ink);
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+}
 
-  .container{ width:100%; max-width:820px; }
+.container{ width:100%; max-width:820px; }
 
-  .card{
-    background:var(--card);
-    border-radius:20px;
-    padding:28px;
-    border:1px solid var(--line);
-    box-shadow:0 20px 60px rgba(0,0,0,.06);
-  }
+.card{
+  background:var(--card);
+  border-radius:20px;
+  padding:28px;
+  border:1px solid var(--line);
+  box-shadow:0 20px 60px rgba(0,0,0,.06);
+}
 
-  .topRow{
-    display:flex;
-    align-items:flex-start;
-    justify-content:space-between;
-    gap:18px;
-    flex-wrap:wrap;
-    margin-bottom:18px;
-  }
+.topRow{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  flex-wrap:wrap;
+  margin-bottom:18px;
+}
 
-  .logoWrap{
-    display:flex;
-    align-items:flex-start;
-    gap:14px;
-    min-width:240px;
-    flex:1 1 280px;
-  }
+.logoImg{
+  width:200px;
+  max-width:65vw;
+  height:auto;
+  display:block;
+  border-radius:14px;
+}
 
-  .logoImg{
-    width:72px;
-    height:auto;
-    display:block;
-    border-radius:12px;
-    object-fit:contain;
-  }
+.tagline{
+  font-size:14px;
+  color:var(--muted);
+  margin-top:6px;
+}
 
-  h1{
-    font-family:"Cormorant Garamond", serif;
-    font-weight:600;
-    font-size:38px;
-    margin:0 0 4px;
-    letter-spacing:-.2px;
-    line-height:1.1;
-  }
+.photoWrap{
+  width:170px;
+  max-width:45vw;
+}
 
-  .sub{
-    font-size:14px;
-    color:var(--muted);
-    margin:0;
-  }
+.photo{
+  width:100%;
+  border-radius:18px;
+  object-fit:cover;
+  aspect-ratio:1/1;
+  border:1px solid var(--line);
+  box-shadow:0 14px 28px rgba(15,23,42,.08);
+}
 
-  .photoWrap{
-    flex:0 0 auto;
-    width:140px;
-    max-width:40vw;
-  }
+.delicate{
+  font-family:"Cormorant Garamond", serif;
+  font-size:19px;
+  color:#3a4252;
+  line-height:1.9;
+  margin:0 0 18px;
+}
 
-  .photo{
-    width:100%;
-    height:auto;
-    display:block;
-    border-radius:18px;
-    object-fit:cover;
-    aspect-ratio:1/1;
-    border:1px solid rgba(148,163,184,.35);
-    box-shadow:0 14px 28px rgba(15,23,42,.08);
-    background:#eef2ff;
-  }
+p{
+  line-height:1.75;
+  font-size:15px;
+  margin:0 0 18px;
+}
 
-  .delicate{
-    font-family:"Cormorant Garamond", serif;
-    font-size:19px;
-    color:#3a4252;
-    line-height:1.9;
-    margin:0 0 18px;
-  }
+.links{
+  margin-top:22px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
 
-  p{
-    line-height:1.75;
-    font-size:15px;
-    color:var(--ink);
-    margin:0 0 18px;
-  }
+a.button{
+  text-decoration:none;
+  padding:14px 16px;
+  border-radius:12px;
+  background:linear-gradient(145deg, rgba(37,99,235,.95), rgba(29,78,216,.95));
+  color:white;
+  font-weight:600;
+  text-align:center;
+  display:block;
+}
 
-  .links{
-    margin-top:22px;
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-  }
+a.secondary{
+  background:#fff;
+  color:var(--ink);
+  border:1px solid var(--line);
+}
 
-  a.button{
-    text-decoration:none;
-    padding:14px 16px;
-    border-radius:12px;
-    border:1px solid rgba(37,99,235,.25);
-    background:linear-gradient(145deg, rgba(37,99,235,.95), rgba(29,78,216,.95));
-    color:white;
-    font-weight:600;
-    text-align:center;
-    display:block;
-    transition:.2s ease;
-  }
+.section{
+  margin-top:40px;
+}
 
-  a.button:hover{
-    transform:translateY(-1px);
-    box-shadow:0 6px 18px rgba(37,99,235,.25);
-  }
+.section h3{
+  margin:0 0 14px;
+}
 
-  a.secondary{
-    background:#fff;
-    color:var(--ink);
-    border:1px solid var(--line);
-  }
+.instagramWrap{
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:16px;
+  background:#fafcff;
+}
 
-  .serviceLine{
-    margin-top:18px;
-    font-size:14px;
-    color:var(--muted);
-    line-height:1.6;
-  }
+.fine{
+  margin-top:12px;
+  font-size:11px;
+  color:var(--muted);
+  line-height:1.5;
+}
 
-  .expertise{
-    margin-top:24px;
-    font-size:14px;
-    color:var(--muted);
-    line-height:1.9;
-  }
-
-  .expertise strong{
-    display:block;
-    margin-bottom:8px;
-    font-weight:600;
-    color:var(--ink);
-  }
-
-  .contactCard{
-    margin-top:28px;
-    padding:18px;
-    border-radius:16px;
-    border:1px solid var(--line);
-    background:linear-gradient(180deg,#ffffff 0%,#f9fbff 100%);
-  }
-
-  .contactCard h3{
-    margin:0 0 8px;
-    font-size:18px;
-  }
-
-  .fine{
-    margin-top:10px;
-    font-size:11px;
-    color:var(--muted);
-    line-height:1.5;
-  }
-
-  @media (max-width:560px){
-    body{ padding:26px 12px; }
-    .card{ padding:20px; }
-    .photoWrap{ width:110px; }
-    h1{ font-size:32px; }
-    .delicate{ font-size:18px; }
-  }
+@media (max-width:560px){
+  body{ padding:26px 12px; }
+  .card{ padding:20px; }
+  .photoWrap{ width:130px; }
+  .logoImg{ width:170px; }
+}
 </style>
 </head>
 
 <body>
 <div class="container">
-  <div class="card">
+<div class="card">
 
-    <div class="topRow">
-      <div class="logoWrap">
-        <!-- FIXED: images are in /images and filenames are case-sensitive on GitHub Pages -->
-        <img class="logoImg" src="images/Logo.jpg" alt="Practice logo">
-        <div>
-          <h1>Jess Devereaux, LMHC</h1>
-          <p class="sub">Child &amp; Adolescent Therapy · Rhode Island</p>
-        </div>
-      </div>
-
-      <div class="photoWrap">
-        <img class="photo" src="images/jess.jpg" alt="Jess Devereaux">
-      </div>
+  <div class="topRow">
+    <div>
+      <img class="logoImg" src="images/Logo.jpg" alt="Practice logo">
+      <div class="tagline">Child & Adolescent Therapy · Rhode Island</div>
     </div>
 
-    <p class="delicate">
-      I work with children and adolescents in Rhode Island navigating anxiety, mood concerns, school stress, social challenges, and life transitions.
-      They deserve a safe and supportive space to explore their emotions, strengthen coping skills, and grow in confidence.
-    </p>
-
-    <p>
-      Therapy is tailored to each child’s age, strengths, and needs. With younger children, sessions may include play and creative activities.
-      With teens, therapy focuses on insight, skill-building, and open discussion. I also partner with parents to reinforce progress and support emotional growth at home.
-    </p>
-
-    <p>
-      With 13 years of experience as a school counselor, I specialize in anxiety, mood concerns, emotional regulation, and school-related stress.
-      My approach integrates CBT, solution-focused strategies, and mindfulness to build resilience and lasting skills.
-    </p>
-
-    <div class="links">
-      <a class="button" href="https://jess-devereaux.clientsecure.me/contact-widget" target="_blank" rel="noopener">
-        Contact Jess Securely
-      </a>
-
-      <a class="button secondary" href="https://jess-devereaux.clientsecure.me/" target="_blank" rel="noopener">
-        Client Portal
-      </a>
-
-      <a class="button secondary" href="https://www.psychologytoday.com/us/therapists/jess-devereaux-cranston-ri/1637415" target="_blank" rel="noopener">
-        View Psychology Today Profile
-      </a>
+    <div class="photoWrap">
+      <img class="photo" src="images/jess.jpg" alt="Jess Devereaux">
     </div>
-
-    <div class="serviceLine">
-      Serving families in Cranston and throughout Rhode Island (in-person + telehealth).
-    </div>
-
-    <div class="expertise">
-      <strong>Specialties &amp; Expertise</strong>
-      ADHD · Anxiety · Behavioral Issues · Body Image · Child · Depression · Education and Learning Disabilities · LGBTQ+ · Life Transitions · Parenting · Peer Relationships · School Issues · Self Esteem · Stress · Testing and Evaluation
-    </div>
-
-    <div class="contactCard">
-      <h3>Send a Message</h3>
-
-      <a class="button" href="https://jess-devereaux.clientsecure.me/contact-widget" target="_blank" rel="noopener">
-        Open Secure Contact Form
-      </a>
-
-      <div class="fine">
-        Please do not include sensitive clinical details or crisis information in a web inquiry.
-        If you are in crisis, call 988 or your local emergency number.
-      </div>
-    </div>
-
   </div>
+
+  <p class="delicate">
+    I work with children and adolescents in Rhode Island navigating anxiety, mood concerns, school stress, social challenges, and life transitions.
+    They deserve a safe and supportive space to explore their emotions, strengthen coping skills, and grow in confidence.
+  </p>
+
+  <p>
+    Therapy is tailored to each child’s age, strengths, and needs. With younger children, sessions may include play and creative activities.
+    With teens, therapy focuses on insight, skill-building, and open discussion. I also partner with parents to reinforce progress and support emotional growth at home.
+  </p>
+
+  <div class="links">
+    <a class="button" href="https://jess-devereaux.clientsecure.me/contact-widget" target="_blank">
+      Contact Jess Securely
+    </a>
+
+    <a class="button secondary" href="https://www.psychologytoday.com/us/therapists/jess-devereaux-cranston-ri/1637415" target="_blank">
+      View Psychology Today Profile
+    </a>
+
+    <a class="button secondary" href="https://www.instagram.com/jessdevereauxlmhc/" target="_blank">
+      Follow on Instagram
+    </a>
+  </div>
+
+  <!-- Instagram Section -->
+  <div class="section">
+    <h3>Latest from Instagram</h3>
+
+    <div class="instagramWrap">
+
+      <!-- Replace THIS link with the direct link to her latest POST -->
+      <!-- Example: https://www.instagram.com/p/POSTID/ -->
+
+      <blockquote class="instagram-media"
+        data-instgrm-permalink="https://www.instagram.com/p/DU0rIuAkXM8/"
+        data-instgrm-version="14"
+        style="background:#FFF; border:0; margin:0 auto; max-width:540px;">
+      </blockquote>
+
+      <script async src="//www.instagram.com/embed.js"></script>
+
+    </div>
+  </div>
+
+  <div class="fine">
+    Please do not include sensitive clinical details or crisis information in a web inquiry.
+    If you are in crisis, call 988 or your local emergency number.
+  </div>
+
 </div>
+</div>
+
 </body>
 </html>
