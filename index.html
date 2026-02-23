@@ -1,336 +1,216 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- ******************************************************************
-    EDIT OFTEN (1): Title + description
-  ******************************************************************* -->
-  <title>Jess Devereaux, LMHC</title>
-  <meta name="description" content="Counseling for children, teens, adults, and families. Redirecting to scheduling and profile links." />
+<!-- ********** EDIT: TITLE + DESCRIPTION ********** -->
+<title>Jess Devereaux, LMHC</title>
+<meta name="description" content="Child and adolescent therapy in Rhode Island. Anxiety, mood, school stress, and emotional growth.">
 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --bg:#f6f9ff;
-      --card:#ffffff;
-      --ink:#0b1220;
-      --muted:#526071;
-      --line:rgba(148,163,184,.35);
-      --accent:#2563eb;
-      --accent2:#38bdf8;
-      --shadow:0 18px 50px rgba(15,23,42,.10);
-      --r:22px;
-      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-      color:var(--ink);
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      min-height:100vh;
-      display:grid;
-      place-items:center;
-      padding:18px;
-      background:
-        radial-gradient(1100px 520px at 50% -80px, rgba(56,189,248,.26), transparent 60%),
-        radial-gradient(900px 520px at 10% 15%, rgba(37,99,235,.12), transparent 55%),
-        linear-gradient(180deg, #f3f7ff 0%, var(--bg) 45%, #fbfdff 100%);
-    }
-    .wrap{width:100%; max-width:720px;}
-    .card{
-      background:rgba(255,255,255,.86);
-      border:1px solid var(--line);
-      box-shadow:var(--shadow);
-      border-radius:var(--r);
-      padding:22px;
-      backdrop-filter:blur(10px);
-    }
-    header{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      margin-bottom:16px;
-    }
-    .mark{
-      width:46px; height:46px;
-      border-radius:18px;
-      background:linear-gradient(145deg,var(--accent),var(--accent2));
-      box-shadow:0 10px 22px rgba(37,99,235,.35);
-      color:#fff;
-      font-weight:800;
-      display:flex; align-items:center; justify-content:center;
-      letter-spacing:.4px;
-      flex:0 0 auto;
-    }
-    h1{
-      margin:0;
-      font-size:22px;
-      letter-spacing:-.2px;
-      line-height:1.15;
-    }
-    .sub{
-      margin:4px 0 0;
-      color:var(--muted);
-      font-size:13px;
-    }
-    .lead{
-      margin:14px 0 0;
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.6;
-    }
-    .buttons{
-      display:grid;
-      gap:10px;
-      margin:16px 0 6px;
-    }
-    .btn{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      padding:12px 14px;
-      border-radius:16px;
-      border:1px solid rgba(148,163,184,.45);
-      background:#fff;
-      text-decoration:none;
-      color:inherit;
-      font-weight:700;
-      box-shadow:0 10px 22px rgba(15,23,42,.06);
-      transition:transform .08s ease, box-shadow .08s ease, border-color .12s ease;
-    }
-    .btn:hover{
-      transform:translateY(-1px);
-      border-color:rgba(37,99,235,.35);
-      box-shadow:0 14px 28px rgba(15,23,42,.08);
-    }
-    .btnPrimary{
-      border:1px solid rgba(37,99,235,.35);
-      background:linear-gradient(145deg, rgba(37,99,235,.96), rgba(29,78,216,.96));
-      color:#fff;
-      box-shadow:0 16px 34px rgba(37,99,235,.35);
-    }
-    .btnPrimary:hover{box-shadow:0 18px 40px rgba(37,99,235,.45)}
-    .btn small{font-weight:600; opacity:.85}
-    .arrow{font-weight:900; opacity:.75}
-    .fine{
-      margin:10px 0 0;
-      color:var(--muted);
-      font-size:12px;
-    }
-    .divider{
-      height:1px;
-      background:rgba(148,163,184,.35);
-      margin:16px 0;
-    }
-    .miniForm{
-      display:grid;
-      gap:8px;
-      margin-top:10px;
-    }
-    label{font-size:12px; font-weight:700; color:var(--muted)}
-    input,textarea{
-      width:100%;
-      padding:10px 11px;
-      border-radius:14px;
-      border:1px solid rgba(148,163,184,.65);
-      font:inherit;
-      font-size:14px;
-      background:#fff;
-      outline:none;
-    }
-    textarea{min-height:88px; resize:vertical}
-    input:focus,textarea:focus{
-      border-color:rgba(37,99,235,.55);
-      box-shadow:0 0 0 4px rgba(37,99,235,.12);
-    }
-    .send{
-      border:none;
-      cursor:pointer;
-      padding:12px 14px;
-      border-radius:999px;
-      font:inherit;
-      font-weight:900;
-      background:linear-gradient(145deg, rgba(37,99,235,.96), rgba(29,78,216,.96));
-      color:#fff;
-      box-shadow:0 16px 34px rgba(37,99,235,.35);
-    }
-    .send:hover{transform:translateY(-1px)}
-    footer{
-      margin-top:12px;
-      text-align:center;
-      color:var(--muted);
-      font-size:11px;
-      line-height:1.5;
-    }
-  </style>
+<style>
+:root{
+  --bg:#f7f9fd;
+  --ink:#2b2f38;
+  --muted:#6b7280;
+  --accent:#2563eb;
+  --line:rgba(148,163,184,.35);
+  --card:#ffffff;
+  font-family:Inter, system-ui, -apple-system;
+}
 
-  <script>
-    // ******************************************************************
-    // EDIT OFTEN (2): Put your real links here
-    // ******************************************************************
-    const LINKS = {
-      // your SimplePractice / Client Portal / scheduler:
-      simplePractice: "https://YOUR-SIMPLEPRACTICE-LINK-HERE",
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:linear-gradient(180deg,#f3f7ff 0%, var(--bg) 100%);
+  padding:40px 20px;
+  display:flex;
+  justify-content:center;
+}
 
-      // your Psychology Today profile:
-      psychologyToday: "https://YOUR-PSYCHOLOGY-TODAY-LINK-HERE",
+.container{
+  max-width:760px;
+  width:100%;
+}
 
-      // optional: a “learn more” page (could be your website, Google Business, etc.)
-      learnMore: "https://YOUR-WEBSITE-OR-LINKTREE-HERE"
-    };
+.card{
+  background:var(--card);
+  border-radius:20px;
+  padding:40px;
+  border:1px solid var(--line);
+  box-shadow:0 20px 60px rgba(0,0,0,.06);
+}
 
-    // ******************************************************************
-    // EDIT OFTEN (3): Where email goes
-    // ******************************************************************
-    const TO_EMAIL = "jessdevereauxlmhc@gmail.com";
+h1{
+  font-family:"Cormorant Garamond", serif;
+  font-weight:500;
+  font-size:36px;
+  margin:0 0 6px;
+}
 
-    // ******************************************************************
-    // OPTIONAL AUTO-REDIRECT:
-    // - set enabled: true to auto-send visitors to SimplePractice after delay
-    // - set enabled: false to keep as a simple landing page (recommended)
-    // ******************************************************************
-    const AUTO_REDIRECT = { enabled: false, seconds: 3, destination: "simplePractice" };
+.sub{
+  font-size:14px;
+  color:var(--muted);
+  margin-bottom:30px;
+}
 
-    window.addEventListener("DOMContentLoaded", () => {
-      // wire links
-      const sp = document.getElementById("link-sp");
-      const pt = document.getElementById("link-pt");
-      const lm = document.getElementById("link-lm");
+p{
+  line-height:1.7;
+  font-size:15px;
+  color:var(--ink);
+  margin:0 0 18px;
+}
 
-      sp.href = LINKS.simplePractice;
-      pt.href = LINKS.psychologyToday;
-      lm.href = LINKS.learnMore;
+.delicate{
+  font-family:"Cormorant Garamond", serif;
+  font-size:18px;
+  color:#3a4252;
+  line-height:1.8;
+}
 
-      // auto redirect (optional)
-      if (AUTO_REDIRECT.enabled && LINKS[AUTO_REDIRECT.destination]) {
-        const msg = document.getElementById("redirectMsg");
-        msg.style.display = "block";
-        let remaining = AUTO_REDIRECT.seconds;
-        msg.textContent = `Redirecting in ${remaining}s…`;
+.links{
+  margin-top:30px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
 
-        const timer = setInterval(() => {
-          remaining -= 1;
-          if (remaining <= 0) {
-            clearInterval(timer);
-            window.location.href = LINKS[AUTO_REDIRECT.destination];
-          } else {
-            msg.textContent = `Redirecting in ${remaining}s…`;
-          }
-        }, 1000);
-      }
+a.button{
+  text-decoration:none;
+  padding:14px;
+  border-radius:12px;
+  border:1px solid rgba(37,99,235,.25);
+  background:linear-gradient(145deg, rgba(37,99,235,.95), rgba(29,78,216,.95));
+  color:white;
+  font-weight:600;
+  text-align:center;
+}
 
-      // mini email form -> mailto compose (works on GitHub Pages)
-      const form = document.getElementById("emailForm");
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const name = (document.getElementById("name").value || "").trim();
-        const email = (document.getElementById("email").value || "").trim();
-        const message = (document.getElementById("message").value || "").trim();
+a.secondary{
+  background:#fff;
+  color:var(--ink);
+  border:1px solid var(--line);
+}
 
-        const subject = encodeURIComponent("Start the conversation");
-        const body = encodeURIComponent(
-          `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n\n— sent from landing page`
-        );
+.expertise{
+  margin-top:40px;
+  font-size:14px;
+  color:var(--muted);
+  line-height:1.8;
+}
 
-        window.location.href = `mailto:${TO_EMAIL}?subject=${subject}&body=${body}`;
-      });
-    });
-  </script>
+.expertise strong{
+  display:block;
+  margin-bottom:8px;
+  font-weight:600;
+  color:var(--ink);
+}
+
+form{
+  margin-top:40px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+input, textarea{
+  padding:12px;
+  border-radius:10px;
+  border:1px solid var(--line);
+  font-family:inherit;
+  font-size:14px;
+}
+
+textarea{
+  min-height:90px;
+}
+
+button{
+  padding:14px;
+  border:none;
+  border-radius:999px;
+  background:linear-gradient(145deg, rgba(37,99,235,.95), rgba(29,78,216,.95));
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+}
+
+small{
+  display:block;
+  margin-top:8px;
+  font-size:11px;
+  color:var(--muted);
+}
+</style>
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="card">
-      <header>
-        <!-- ********** EDIT OFTEN (4): Initials / brand mark ********** -->
-        <div class="mark">JD</div>
-        <div>
-          <!-- ********** EDIT OFTEN (5): Name / credential ********** -->
-          <h1>Jess Devereaux, LMHC</h1>
-          <!-- ********** EDIT OFTEN (6): Tagline ********** -->
-          <div class="sub">Counseling for children, teens, adults, and families</div>
-        </div>
-      </header>
+<div class="container">
+  <div class="card">
 
-      <!-- ********** EDIT OFTEN (7): short friendly message ********** -->
-      <p class="lead">
-        Thanks for visiting. Use the links below to schedule, view my profile, or send a quick message.
-      </p>
+    <!-- ********** EDIT NAME + TITLE ********** -->
+    <h1>Jess Devereaux, LMHC</h1>
+    <div class="sub">Child & Adolescent Therapy · Rhode Island</div>
 
-      <div id="redirectMsg" class="fine" style="display:none;"></div>
+    <!-- ********** EDIT BIO TEXT FREELY BELOW ********** -->
+    <p class="delicate">
+      I work with children and adolescents in Rhode Island navigating anxiety, mood concerns, school stress, social challenges, and life transitions. They deserve a safe and supportive space to explore their emotions, strengthen coping skills, and grow in confidence.
+    </p>
 
-      <div class="buttons">
-        <!-- Primary: SimplePractice / scheduling -->
-        <a class="btn btnPrimary" id="link-sp" href="#" target="_blank" rel="noopener">
-          <span>Start the conversation <small>(schedule / portal)</small></span>
-          <span class="arrow">→</span>
-        </a>
+    <p>
+      Therapy is tailored to each child’s age, strengths, and needs. With younger children, sessions may include play and creative activities. With teens, therapy focuses on insight, skill-building, and open discussion. I also partner closely with parents to reinforce progress and support emotional growth at home.
+    </p>
 
-        <!-- Secondary: Psychology Today -->
-        <a class="btn" id="link-pt" href="#" target="_blank" rel="noopener">
-          <span>Psychology Today profile <small>(learn more)</small></span>
-          <span class="arrow">→</span>
-        </a>
+    <p>
+      With 13 years of experience as a school counselor, I specialize in anxiety, mood concerns, emotional regulation, and school-related stress. My approach integrates CBT, solution-focused strategies, and mindfulness to build resilience and lasting skills.
+    </p>
 
-        <!-- Optional third link -->
-        <a class="btn" id="link-lm" href="#" target="_blank" rel="noopener">
-          <span>More information <small>(website)</small></span>
-          <span class="arrow">→</span>
-        </a>
-      </div>
+    <p>
+      Starting therapy can feel overwhelming. My goal is to create a calm, understanding space for children and teens while collaborating with parents to support growth. I would love to connect and see if my approach is a fit for your child and family.
+    </p>
 
-      <div class="divider"></div>
-
-      <!-- ******************************************************************
-        EMAIL FUNCTION (works on static hosting):
-        This opens the visitor’s email app with the message pre-filled.
-      ******************************************************************* -->
-      <div>
-        <div style="font-weight:800; margin-bottom:6px;">Send a quick message</div>
-
-        <form id="emailForm" class="miniForm">
-          <div>
-            <label for="name">Name</label>
-            <input id="name" type="text" placeholder="First and last name" required />
-          </div>
-
-          <div>
-            <label for="email">Email</label>
-            <input id="email" type="email" placeholder="you@example.com" required />
-          </div>
-
-          <div>
-            <label for="message">Message</label>
-            <textarea id="message" placeholder="Briefly share what you're looking for. (No sensitive or crisis info.)"></textarea>
-          </div>
-
-          <button class="send" type="submit">Email Jess</button>
-
-          <div class="fine">
-            If the button doesn’t open your email app, email directly:
-            <a id="directMail" href="mailto:jessdevereauxlmhc@gmail.com" style="color:var(--accent); font-weight:900; text-decoration:none;">
-              jessdevereauxlmhc@gmail.com
-            </a>
-          </div>
-
-          <div class="fine">
-            Please don’t include sensitive or crisis information. If you are in crisis, call 988 or your local emergency number.
-          </div>
-        </form>
-      </div>
-
-      <footer>
-        © <span id="year"></span> Jess Devereaux, LMHC · This page is informational and does not create a therapeutic relationship.
-      </footer>
+    <!-- ********** EDIT LINKS BELOW ********** -->
+    <div class="links">
+      <a class="button" href="https://YOUR-SIMPLEPRACTICE-LINK" target="_blank">Start the Conversation</a>
+      <a class="button secondary" href="https://YOUR-PSYCHOLOGY-TODAY-LINK" target="_blank">View Psychology Today Profile</a>
     </div>
-  </div>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+    <!-- ********** EXPERTISE SECTION ********** -->
+    <div class="expertise">
+      <strong>Specialties & Expertise</strong>
+      ADHD · Anxiety · Behavioral Issues · Body Image · Child · Depression · Education & Learning Disabilities · LGBTQ+ · Life Transitions · Parenting · Peer Relationships · School Issues · Self Esteem · Stress · Testing & Evaluation · Trauma and PTSD
+    </div>
+
+    <!-- ********** EMAIL FUNCTION ********** -->
+    <form id="emailForm">
+      <input type="text" id="name" placeholder="Your name" required>
+      <input type="email" id="email" placeholder="Your email" required>
+      <textarea id="message" placeholder="Brief message (no sensitive or crisis information)"></textarea>
+      <button type="submit">Email Jess</button>
+      <small>If you are in crisis, please call 988 or your local emergency number.</small>
+    </form>
+
+  </div>
+</div>
+
+<script>
+const TO_EMAIL = "jessdevereauxlmhc@gmail.com";
+
+document.getElementById("emailForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+
+  const subject = encodeURIComponent("Start the Conversation");
+  const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+
+  window.location.href = `mailto:${TO_EMAIL}?subject=${subject}&body=${body}`;
+});
+</script>
+
 </body>
 </html>
