@@ -21,6 +21,7 @@
   }
 
   *{box-sizing:border-box}
+
   body{
     margin:0;
     background:linear-gradient(180deg,#f3f7ff 0%, var(--bg) 100%);
@@ -41,7 +42,6 @@
     box-shadow:0 20px 60px rgba(0,0,0,.06);
   }
 
-  /* Top row: logo left, photo right */
   .topRow{
     display:flex;
     align-items:flex-start;
@@ -66,8 +66,6 @@
     border-radius:12px;
     object-fit:contain;
   }
-
-  .nameBlock{ min-width:0; }
 
   h1{
     font-family:"Cormorant Garamond", serif;
@@ -99,7 +97,6 @@
     aspect-ratio:1/1;
     border:1px solid rgba(148,163,184,.35);
     box-shadow:0 14px 28px rgba(15,23,42,.08);
-    background:#eef2ff;
   }
 
   .delicate{
@@ -134,12 +131,25 @@
     font-weight:600;
     text-align:center;
     display:block;
+    transition:.2s ease;
+  }
+
+  a.button:hover{
+    transform:translateY(-1px);
+    box-shadow:0 6px 18px rgba(37,99,235,.25);
   }
 
   a.secondary{
     background:#fff;
     color:var(--ink);
     border:1px solid var(--line);
+  }
+
+  .serviceLine{
+    margin-top:18px;
+    font-size:14px;
+    color:var(--muted);
+    line-height:1.6;
   }
 
   .expertise{
@@ -156,56 +166,26 @@
     color:var(--ink);
   }
 
-  .serviceLine{
-    margin-top:18px;
-    font-size:14px;
-    color:var(--muted);
-    line-height:1.6;
-  }
-
-  form{
-    margin-top:22px;
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-  }
-
-  label{
-    font-size:12px;
-    color:var(--muted);
-    margin-top:6px;
-  }
-
-  input, textarea, select{
-    padding:12px;
-    border-radius:10px;
+  .contactCard{
+    margin-top:28px;
+    padding:18px;
+    border-radius:16px;
     border:1px solid var(--line);
-    font-family:inherit;
-    font-size:14px;
-    width:100%;
-    background:#fff;
+    background:linear-gradient(180deg,#ffffff 0%,#f9fbff 100%);
   }
 
-  textarea{ min-height:110px; resize:vertical; }
-
-  button{
-    padding:14px;
-    border:none;
-    border-radius:999px;
-    background:linear-gradient(145deg, rgba(37,99,235,.95), rgba(29,78,216,.95));
-    color:white;
-    font-weight:600;
-    cursor:pointer;
+  .contactCard h3{
+    margin:0 0 8px;
+    font-size:18px;
   }
 
   .fine{
-    margin-top:8px;
+    margin-top:10px;
     font-size:11px;
     color:var(--muted);
     line-height:1.5;
   }
 
-  /* Mobile safety */
   @media (max-width:560px){
     body{ padding:26px 12px; }
     .card{ padding:20px; }
@@ -222,18 +202,16 @@
 
     <div class="topRow">
       <div class="logoWrap">
-        <!-- ********** PLACE FILE: logo.jpg in the same folder as index.html ********** -->
-        <img class="logoImg" src="logo.jpg" alt="Practice logo">
-
-        <div class="nameBlock">
+        <!-- Using jess.png as requested -->
+        <img class="logoImg" src="jess.png" alt="Jess Devereaux logo">
+        <div>
           <h1>Jess Devereaux, LMHC</h1>
           <p class="sub">Child &amp; Adolescent Therapy · Rhode Island</p>
         </div>
       </div>
 
       <div class="photoWrap">
-        <!-- ********** PLACE FILE: jess.jpg in the same folder as index.html ********** -->
-        <img class="photo" src="jess.jpg" alt="Jess Devereaux">
+        <img class="photo" src="jess.png" alt="Jess Devereaux">
       </div>
     </div>
 
@@ -244,8 +222,7 @@
 
     <p>
       Therapy is tailored to each child’s age, strengths, and needs. With younger children, sessions may include play and creative activities.
-      With teens, therapy focuses on insight, skill-building, and open discussion. I also partner with parents to reinforce progress and support
-      emotional growth at home.
+      With teens, therapy focuses on insight, skill-building, and open discussion. I also partner with parents to reinforce progress and support emotional growth at home.
     </p>
 
     <p>
@@ -253,17 +230,11 @@
       My approach integrates CBT, solution-focused strategies, and mindfulness to build resilience and lasting skills.
     </p>
 
-    <p>
-      Starting therapy can feel overwhelming. My goal is to create a calm, understanding space for children and teens while collaborating with parents
-      to support growth. I would love to connect and see if my approach is a fit for your child and family.
-    </p>
-
     <div class="links">
       <a class="button" href="https://jess-devereaux.clientsecure.me/" target="_blank" rel="noopener">
         Start the Conversation
       </a>
 
-      <!-- Optional: Replace +1401XXXXXXX with the real number (include country code) -->
       <a class="button secondary" href="tel:+1401XXXXXXX">
         Call Jess
       </a>
@@ -282,63 +253,23 @@
       ADHD · Anxiety · Behavioral Issues · Body Image · Child · Depression · Education and Learning Disabilities · LGBTQ+ · Life Transitions · Parenting · Peer Relationships · School Issues · Self Esteem · Stress · Testing and Evaluation
     </div>
 
-    <!-- Contact form: opens visitor's email client (sends FROM their email, not the website) -->
-    <form id="emailForm" action="#" method="get">
-      <input type="text" id="name" placeholder="Your name" required>
+    <div class="contactCard">
+      <h3>Send a Message</h3>
 
-      <select id="contactPref" required>
-        <option value="" selected disabled>Preferred contact method</option>
-        <option value="Email">Email</option>
-        <option value="Phone">Phone</option>
-      </select>
-
-      <input type="tel" id="phone" placeholder="Your phone (optional)">
-
-      <textarea id="message" placeholder="Brief message (please do not include sensitive clinical details or crisis information)" required></textarea>
-
-      <button type="submit">Email Jess</button>
+      <a class="button" 
+         href="https://jess-devereaux.clientsecure.me/contact-widget" 
+         target="_blank" 
+         rel="noopener">
+         Contact Jess Securely
+      </a>
 
       <div class="fine">
-        Please do not include sensitive clinical details in this message. If you are in crisis, call 988 or your local emergency number.
+        This secure contact form is hosted through the client portal.
+        If you are in crisis, please call 988 or your local emergency number.
       </div>
-    </form>
+    </div>
 
   </div>
 </div>
-
-<script>
-  // Opens the visitor's email app with a pre-filled draft.
-  // The email will be sent FROM the visitor's email account (not from the website).
-  const TO_EMAIL = "jessdevereauxlmhc@gmail.com";
-
-  document.getElementById("emailForm").addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const name = (document.getElementById("name").value || "").trim();
-    const contactPref = (document.getElementById("contactPref").value || "").trim();
-    const phone = (document.getElementById("phone").value || "").trim();
-    const message = (document.getElementById("message").value || "").trim();
-
-    const subject = `Website inquiry — ${name || "New message"}`;
-
-    const bodyLines = [
-      `Name: ${name || "(not provided)"}`,
-      `Preferred contact method: ${contactPref || "(not selected)"}`,
-      `Phone: ${phone || "(not provided)"}`,
-      "",
-      "Message:",
-      message || "(No message provided)",
-      "",
-      "— Sent from jessdevereauxlmhc.com"
-    ];
-
-    const mailto = new URL(`mailto:${TO_EMAIL}`);
-    mailto.searchParams.set("subject", subject);
-    mailto.searchParams.set("body", bodyLines.join("\n"));
-
-    window.location.assign(mailto.toString());
-  });
-</script>
-
 </body>
 </html>
