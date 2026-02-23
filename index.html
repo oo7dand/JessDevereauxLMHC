@@ -36,12 +36,12 @@ body{
   color:var(--ink);
 }
 
-.container{ width:100%; max-width:1100px; }
+.container{ width:100%; max-width:1150px; }
 
 .card{
   background:var(--card);
   border-radius:24px;
-  padding:34px;
+  padding:36px;
   border:1px solid var(--line);
   box-shadow:var(--shadow);
 }
@@ -51,12 +51,11 @@ body{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:32px;
-  flex-wrap:nowrap; /* prevents stacking */
-  margin-bottom:28px;
+  gap:40px;
+  flex-wrap:nowrap;
+  margin-bottom:34px;
 }
 
-/* Logo takes ALL available width minus photo column */
 .logoWrap{
   flex:1 1 auto;
   min-width:0;
@@ -67,19 +66,18 @@ body{
   height:auto;
   display:block;
   object-fit:contain;
-  max-height:260px; /* prevents excessive vertical growth */
+  max-height:390px;   /* increased ~50% */
 }
 
 .tagline{
-  margin-top:14px;
-  font-size:14px;
+  margin-top:16px;
+  font-size:15px;
   color:var(--muted);
-  letter-spacing:.3px;
+  letter-spacing:.4px;
 }
 
-/* Photo column fixed width so logo never drops */
 .photoWrap{
-  flex:0 0 280px;
+  flex:0 0 300px;
 }
 
 .photo{
@@ -90,36 +88,32 @@ body{
   object-fit:cover;
   object-position:50% 8%;
   aspect-ratio:1/1;
-  box-shadow:0 16px 44px rgba(15,23,42,.12);
+  box-shadow:0 18px 50px rgba(15,23,42,.15);
   border:1px solid rgba(148,163,184,.35);
 }
 
-/* ===== BODY ===== */
-.delicate{
+/* ===== BODY TEXT (All unified to serif) ===== */
+.delicate,
+p{
   font-family:"Cormorant Garamond", serif;
   font-size:21px;
   line-height:1.9;
-  margin:0 0 20px;
+  margin:0 0 22px;
   color:#2b3445;
 }
 
-p{
-  font-size:15px;
-  line-height:1.75;
-  margin:0 0 18px;
-}
-
+/* ===== BUTTONS ===== */
 .links{
-  margin-top:26px;
+  margin-top:30px;
   display:flex;
   flex-direction:column;
-  gap:12px;
-  max-width:600px;
+  gap:14px;
+  max-width:620px;
 }
 
 a.button{
   text-decoration:none;
-  padding:16px 18px;
+  padding:17px 20px;
   border-radius:14px;
   border:1px solid rgba(37,99,235,.22);
   background:linear-gradient(145deg, rgba(29,78,216,.98), rgba(30,64,175,.98));
@@ -128,6 +122,7 @@ a.button{
   text-align:center;
   display:block;
   transition:.18s ease;
+  font-family:Inter, system-ui, sans-serif;
 }
 
 a.button:hover{
@@ -142,61 +137,65 @@ a.secondary{
 }
 
 .serviceLine{
-  margin-top:20px;
-  font-size:14px;
+  margin-top:24px;
+  font-size:15px;
   color:var(--muted);
+  font-family:Inter, system-ui, sans-serif;
 }
 
 .expertise{
-  margin-top:28px;
-  font-size:14px;
+  margin-top:30px;
+  font-size:15px;
   color:var(--muted);
   line-height:1.9;
+  font-family:Inter, system-ui, sans-serif;
 }
 
 .expertise strong{
   display:block;
-  margin-bottom:8px;
+  margin-bottom:10px;
   color:var(--ink);
 }
 
 /* ===== Instagram ===== */
 .section{
-  margin-top:36px;
+  margin-top:42px;
 }
 
 .sectionHeader{
   display:flex;
   align-items:flex-end;
   justify-content:space-between;
-  margin-bottom:14px;
+  margin-bottom:16px;
 }
 
 .sectionHeader h3{
   margin:0;
-  font-size:18px;
+  font-size:20px;
+  font-family:Inter, system-ui, sans-serif;
 }
 
 .sectionHeader a{
-  font-size:12px;
+  font-size:13px;
   color:#334155;
   text-decoration:none;
   border-bottom:1px solid rgba(51,65,85,.35);
+  font-family:Inter, system-ui, sans-serif;
 }
 
 .igGrid{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
-  gap:16px;
+  gap:18px;
 }
 
 .igTile{
   position:relative;
-  border-radius:20px;
+  border-radius:22px;
   overflow:hidden;
   border:1px solid var(--line);
   aspect-ratio:1/1;
-  box-shadow:0 18px 40px rgba(15,23,42,.06);
+  box-shadow:0 20px 45px rgba(15,23,42,.08);
 }
 
 .igTile img{
@@ -216,14 +215,15 @@ a.secondary{
 
 .igLabel{
   position:absolute;
-  left:14px;
-  bottom:14px;
+  left:16px;
+  bottom:16px;
   color:#fff;
-  font-size:12px;
+  font-size:13px;
   font-weight:600;
   display:flex;
   align-items:center;
   gap:8px;
+  font-family:Inter, system-ui, sans-serif;
 }
 
 .igDot{
@@ -234,18 +234,20 @@ a.secondary{
 }
 
 .fine{
-  margin-top:18px;
-  font-size:11px;
+  margin-top:22px;
+  font-size:12px;
   color:var(--muted);
+  font-family:Inter, system-ui, sans-serif;
 }
 
 @media (max-width:900px){
-  .photoWrap{ flex-basis:240px; }
+  .photoWrap{ flex-basis:260px; }
+  .logoImg{ max-height:330px; }
 }
 
 @media (max-width:760px){
   .topRow{ flex-wrap:wrap; }
-  .photoWrap{ flex:0 0 220px; }
+  .photoWrap{ flex:0 0 240px; }
   .igGrid{ grid-template-columns:1fr; }
 }
 </style>
@@ -262,7 +264,6 @@ a.secondary{
     </div>
 
     <div class="photoWrap">
-      <!-- UPDATED to Jess.png -->
       <img class="photo" src="images/Jess.png" alt="Jess Devereaux">
     </div>
   </div>
