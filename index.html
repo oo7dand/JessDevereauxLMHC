@@ -3,14 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="site-version" content="JDLMHC-PASTEL-1-2026-02-23">
+<meta name="site-version" content="JDLMHC-BG-FORCED-PASTEL1-2026-02-23">
 
 <title>Jess Devereaux, LMHC</title>
 <meta name="description" content="Child & Adolescent Therapy in Rhode Island. Anxiety, mood concerns, school stress, and emotional growth.">
-
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
@@ -19,7 +15,6 @@
 :root{
   --ink:#1f2430;
   --muted:#6b7280;
-  --accent:#1d4ed8;
   --line:rgba(148,163,184,.35);
   --card:#ffffff;
   --shadow:0 22px 70px rgba(0,0,0,.07);
@@ -27,25 +22,28 @@
 
 *{box-sizing:border-box}
 
-/* FIRST PASTEL: soft blush + cream glow (warm/welcoming)
-   Applied to HTML (body transparent) so it *always* shows. */
-html{
-  min-height:100%;
-  background:
-    radial-gradient(900px 520px at 10% 0%, rgba(255,236,229,.70), transparent 62%),
-    radial-gradient(850px 520px at 92% 8%, rgba(255,245,235,.62), transparent 62%),
-    linear-gradient(180deg,#fffdfa 0%, #f8f6f4 100%) !important;
-}
-
 body{
   margin:0;
-  min-height:100%;
-  background:transparent !important;
   padding:40px 16px;
   display:flex;
   justify-content:center;
   font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
   color:var(--ink);
+  background:transparent; /* we force background via ::before */
+  position:relative;
+  min-height:100vh;
+}
+
+/* ✅ HARD-FORCED BACKGROUND LAYER (cannot be overridden by other CSS) */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  background:
+    radial-gradient(900px 520px at 10% 0%, rgba(255,236,229,.70), transparent 62%),
+    radial-gradient(850px 520px at 92% 8%, rgba(255,245,235,.62), transparent 62%),
+    linear-gradient(180deg,#fffdfa 0%, #f8f6f4 100%);
 }
 
 .container{ width:100%; max-width:1150px; }
@@ -68,10 +66,7 @@ body{
   margin-bottom:34px;
 }
 
-.logoWrap{
-  flex:1 1 auto;
-  min-width:0;
-}
+.logoWrap{ flex:1 1 auto; min-width:0; }
 
 .logoImg{
   width:100%;
@@ -337,19 +332,17 @@ a.secondary{
       </div>
 
       <div class="igGrid">
-        <a class="igTile" href="https://www.instagram.com/jessdevereauxlmhc/" target="_blank" rel="noopener" aria-label="Instagram preview 1">
+        <a class="igTile" href="https://www.instagram.com/jessdevereauxlmhc/" target="_blank" rel="noopener">
           <img src="images/ig1.jpg" alt="Instagram preview 1">
           <div class="igOverlay"></div>
           <div class="igLabel"><span class="igDot"></span>View on Instagram</div>
         </a>
-
-        <a class="igTile" href="https://www.instagram.com/jessdevereauxlmhc/" target="_blank" rel="noopener" aria-label="Instagram preview 2">
+        <a class="igTile" href="https://www.instagram.com/jessdevereauxlmhc/" target="_blank" rel="noopener">
           <img src="images/ig2.jpg" alt="Instagram preview 2">
           <div class="igOverlay"></div>
           <div class="igLabel"><span class="igDot"></span>View on Instagram</div>
         </a>
-
-        <a class="igTile" href="https://www.instagram.com/jessdevereauxlmhc/" target="_blank" rel="noopener" aria-label="Instagram preview 3">
+        <a class="igTile" href="https://www.instagram.com/jessdevereauxlmhc/" target="_blank" rel="noopener">
           <img src="images/ig3.jpg" alt="Instagram preview 3">
           <div class="igOverlay"></div>
           <div class="igLabel"><span class="igDot"></span>View on Instagram</div>
@@ -362,7 +355,7 @@ a.secondary{
       If you are in crisis, call 988 or your local emergency number.
     </div>
 
-    <div class="proof">JDLMHC-PASTEL-1-2026-02-23</div>
+    <div class="proof">JDLMHC-BG-FORCED-PASTEL1-2026-02-23</div>
 
   </div>
 </div>
