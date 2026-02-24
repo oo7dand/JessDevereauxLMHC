@@ -4,16 +4,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- VERSION STAMP (use View Source to confirm you’re seeing the right file) -->
+<meta name="site-version" content="JDLMHC-2026-02-23-vFINAL-PASTEL-SAGE">
+
 <title>Jess Devereaux, LMHC</title>
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta name="description" content="Child & Adolescent Therapy in Rhode Island. Anxiety, mood concerns, school stress, and emotional growth.">
+
+<!-- CACHE KILLERS -->
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg:#f7f9fd;
+  --bg1:#f9fbfa;
+  --bg2:#eef3f1;
   --ink:#1f2430;
   --muted:#6b7280;
   --accent:#1d4ed8;
@@ -24,12 +32,19 @@
 
 *{box-sizing:border-box}
 
-body{
-  margin:0;
+/* DIFFERENT WAY: apply background to html AND body, and force it with !important */
+html{
+  min-height:100%;
   background:
     radial-gradient(1000px 600px at 15% 0%, rgba(226,236,231,.70), transparent 65%),
     radial-gradient(900px 500px at 85% 10%, rgba(240,245,242,.65), transparent 65%),
-    linear-gradient(180deg,#f9fbfa 0%, #eef3f1 100%);
+    linear-gradient(180deg,var(--bg1) 0%, var(--bg2) 100%) !important;
+}
+
+body{
+  margin:0;
+  min-height:100%;
+  background:transparent !important; /* uses html background */
   padding:40px 16px;
   display:flex;
   justify-content:center;
@@ -67,7 +82,7 @@ body{
   height:auto;
   display:block;
   object-fit:contain;
-  max-height:470px;
+  max-height:560px; /* bigger logo */
 }
 
 .tagline{
@@ -79,7 +94,7 @@ body{
 
 .photoWrap{
   flex:0 0 300px;
-  padding:18px;
+  padding:26px; /* portrait further from border */
 }
 
 .photo{
@@ -88,7 +103,7 @@ body{
   display:block;
   border-radius:22px;
   object-fit:cover;
-  object-position:50% 8%;
+  object-position:50% 10%;
   aspect-ratio:1/1;
   box-shadow:0 18px 50px rgba(15,23,42,.15);
   border:1px solid rgba(148,163,184,.35);
@@ -169,6 +184,8 @@ a.secondary{
   align-items:flex-end;
   justify-content:space-between;
   margin-bottom:16px;
+  gap:12px;
+  flex-wrap:wrap;
 }
 
 .sectionHeader h3{
@@ -198,6 +215,7 @@ a.secondary{
   border:1px solid var(--line);
   aspect-ratio:1/1;
   box-shadow:0 20px 45px rgba(15,23,42,.08);
+  display:block;
 }
 
 .igTile img{
@@ -205,6 +223,7 @@ a.secondary{
   height:100%;
   object-fit:cover;
   transition:transform .25s ease;
+  display:block;
 }
 
 .igTile:hover img{ transform:scale(1.06); }
@@ -226,6 +245,7 @@ a.secondary{
   align-items:center;
   gap:8px;
   font-family:Inter, system-ui, sans-serif;
+  text-shadow:0 10px 22px rgba(0,0,0,.25);
 }
 
 .igDot{
@@ -242,14 +262,23 @@ a.secondary{
   font-family:Inter, system-ui, sans-serif;
 }
 
+/* Small “proof” badge so you can visually confirm changes */
+.proof{
+  margin-top:14px;
+  font-size:11px;
+  color:#8a93a3;
+  font-family:Inter, system-ui, sans-serif;
+  text-align:right;
+}
+
 @media (max-width:900px){
   .photoWrap{ flex-basis:260px; }
-  .logoImg{ max-height:410px; }
+  .logoImg{ max-height:500px; }
 }
 
 @media (max-width:760px){
   .topRow{ flex-wrap:wrap; }
-  .photoWrap{ flex:0 0 240px; }
+  .photoWrap{ flex:0 0 240px; padding:20px; }
   .igGrid{ grid-template-columns:1fr; }
 }
 </style>
@@ -257,88 +286,103 @@ a.secondary{
 
 <body>
 <div class="container">
-<div class="card">
+  <div class="card">
 
-  <div class="topRow">
-    <div class="logoWrap">
-      <img class="logoImg" src="images/Logo.jpg" alt="Practice logo">
-      <div class="tagline">Child &amp; Adolescent Therapy · Rhode Island</div>
+    <div class="topRow">
+      <div class="logoWrap">
+        <img class="logoImg" src="images/Logo.jpg" alt="Practice logo">
+        <div class="tagline">Child &amp; Adolescent Therapy · Rhode Island</div>
+      </div>
+
+      <div class="photoWrap">
+        <img class="photo" src="images/Jess.png" alt="Jess Devereaux">
+      </div>
     </div>
 
-    <div class="photoWrap">
-      <img class="photo" src="images/Jess.png" alt="Jess Devereaux">
-    </div>
-  </div>
+    <p class="delicate">
+      I work with children and adolescents in Rhode Island navigating anxiety, mood concerns, school stress, social challenges, and life transitions.
+      They deserve a safe and supportive space to explore their emotions, strengthen coping skills, and grow in confidence.
+    </p>
 
-  <p class="delicate">
-    I work with children and adolescents in Rhode Island navigating anxiety, mood concerns, school stress, social challenges, and life transitions.
-    They deserve a safe and supportive space to explore their emotions, strengthen coping skills, and grow in confidence.
-  </p>
+    <p>
+      Therapy is tailored to each child’s age, strengths, and needs. With younger children, sessions may include play and creative activities.
+      With teens, therapy focuses on insight, skill-building, and open discussion. I also partner with parents to reinforce progress and support emotional growth at home.
+    </p>
 
-  <p>
-    Therapy is tailored to each child’s age, strengths, and needs. With younger children, sessions may include play and creative activities.
-    With teens, therapy focuses on insight, skill-building, and open discussion. I also partner with parents to reinforce progress and support emotional growth at home.
-  </p>
+    <p>
+      With 13 years of experience as a school counselor, I specialize in anxiety, mood concerns, emotional regulation, and school-related stress.
+      My approach integrates CBT, solution-focused strategies, and mindfulness to build resilience and lasting skills.
+    </p>
 
-  <p>
-    With 13 years of experience as a school counselor, I specialize in anxiety, mood concerns, emotional regulation, and school-related stress.
-    My approach integrates CBT, solution-focused strategies, and mindfulness to build resilience and lasting skills.
-  </p>
-
-  <div class="links">
-    <a class="button" href="https://jess-devereaux.clientsecure.me/contact-widget" target="_blank">
-      Contact Jess Securely
-    </a>
-
-    <a class="button secondary" href="https://jess-devereaux.clientsecure.me/" target="_blank">
-      Website / Client Portal
-    </a>
-
-    <a class="button secondary" href="https://www.psychologytoday.com/us/therapists/jess-devereaux-cranston-ri/1637415" target="_blank">
-      View Psychology Today Profile
-    </a>
-  </div>
-
-  <div class="serviceLine">
-    Serving families in Cranston and throughout Rhode Island (in-person + telehealth).
-  </div>
-
-  <div class="expertise">
-    <strong>Specialties &amp; Expertise</strong>
-    ADHD · Anxiety · Behavioral Issues · Body Image · Child · Depression · Education and Learning Disabilities · LGBTQ+ · Life Transitions · Parenting · Peer Relationships · School Issues · Self Esteem · Stress · Testing and Evaluation
-  </div>
-
-  <div class="section">
-    <div class="sectionHeader">
-      <h3>On Instagram</h3>
-      <a href="https://www.instagram.com/jessdevereauxlmhc/" target="_blank">Follow @jessdevereauxlmhc</a>
-    </div>
-
-    <div class="igGrid">
-      <a class="igTile" href="https://www.instagram.com/jessdevereauxlmhc/" target="_blank">
-        <img src="images/ig1.jpg">
-        <div class="igOverlay"></div>
-        <div class="igLabel"><span class="igDot"></span>View on Instagram</div>
+    <div class="links">
+      <a class="button" href="https://jess-devereaux.clientsecure.me/contact-widget" target="_blank" rel="noopener">
+        Contact Jess Securely
       </a>
-      <a class="igTile" href="https://www.instagram.com/jessdevereauxlmhc/" target="_blank">
-        <img src="images/ig2.jpg">
-        <div class="igOverlay"></div>
-        <div class="igLabel"><span class="igDot"></span>View on Instagram</div>
+
+      <a class="button secondary" href="https://jess-devereaux.clientsecure.me/" target="_blank" rel="noopener">
+        Website / Client Portal
       </a>
-      <a class="igTile" href="https://www.instagram.com/jessdevereauxlmhc/" target="_blank">
-        <img src="images/ig3.jpg">
-        <div class="igOverlay"></div>
-        <div class="igLabel"><span class="igDot"></span>View on Instagram</div>
+
+      <a class="button secondary" href="https://www.psychologytoday.com/us/therapists/jess-devereaux-cranston-ri/1637415" target="_blank" rel="noopener">
+        View Psychology Today Profile
       </a>
     </div>
-  </div>
 
-  <div class="fine">
-    Please do not include sensitive clinical details or crisis information in a web inquiry.
-    If you are in crisis, call 988 or your local emergency number.
-  </div>
+    <div class="serviceLine">
+      Serving families in Cranston and throughout Rhode Island (in-person + telehealth).
+    </div>
 
+    <div class="expertise">
+      <strong>Specialties &amp; Expertise</strong>
+      ADHD · Anxiety · Behavioral Issues · Body Image · Child · Depression · Education and Learning Disabilities · LGBTQ+ · Life Transitions · Parenting · Peer Relationships · School Issues · Self Esteem · Stress · Testing and Evaluation
+    </div>
+
+    <div class="section">
+      <div class="sectionHeader">
+        <h3>On Instagram</h3>
+        <a href="https://www.instagram.com/jessdevereauxlmhc/" target="_blank" rel="noopener">Follow @jessdevereauxlmhc</a>
+      </div>
+
+      <div class="igGrid">
+        <a class="igTile" href="https://www.instagram.com/jessdevereauxlmhc/" target="_blank" rel="noopener" aria-label="Instagram preview 1">
+          <img src="images/ig1.jpg" alt="Instagram preview 1">
+          <div class="igOverlay"></div>
+          <div class="igLabel"><span class="igDot"></span>View on Instagram</div>
+        </a>
+
+        <a class="igTile" href="https://www.instagram.com/jessdevereauxlmhc/" target="_blank" rel="noopener" aria-label="Instagram preview 2">
+          <img src="images/ig2.jpg" alt="Instagram preview 2">
+          <div class="igOverlay"></div>
+          <div class="igLabel"><span class="igDot"></span>View on Instagram</div>
+        </a>
+
+        <a class="igTile" href="https://www.instagram.com/jessdevereauxlmhc/" target="_blank" rel="noopener" aria-label="Instagram preview 3">
+          <img src="images/ig3.jpg" alt="Instagram preview 3">
+          <div class="igOverlay"></div>
+          <div class="igLabel"><span class="igDot"></span>View on Instagram</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="fine">
+      Please do not include sensitive clinical details or crisis information in a web inquiry.
+      If you are in crisis, call 988 or your local emergency number.
+    </div>
+
+    <div class="proof">JDLMHC-2026-02-23-vFINAL-PASTEL-SAGE</div>
+
+  </div>
 </div>
-</div>
+
+<script>
+  // Hide IG tiles if images missing (prevents broken placeholders)
+  document.querySelectorAll('.igTile img').forEach(img => {
+    img.addEventListener('error', () => {
+      const tile = img.closest('.igTile');
+      if (tile) tile.style.display = 'none';
+    }, { once:true });
+  });
+</script>
+
 </body>
 </html>
