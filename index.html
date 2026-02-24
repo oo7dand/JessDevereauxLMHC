@@ -3,13 +3,40 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="site-version" content="JDLMHC-BG-FORCED-PASTEL1-2026-02-23">
 
-<title>Jess Devereaux, LMHC</title>
-<meta name="description" content="Child & Adolescent Therapy in Rhode Island. Anxiety, mood concerns, school stress, and emotional growth.">
+<!-- SEO -->
+<title>Child & Adolescent Therapist in Cranston, RI | Jess Devereaux, LMHC</title>
+<meta name="description" content="Jess Devereaux, LMHC is a child and adolescent therapist in Cranston, Rhode Island specializing in anxiety, mood concerns, school stress, and emotional regulation. In-person and telehealth available.">
+<link rel="canonical" href="https://jessdevereaux.com/">
+
+<!-- Social preview -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Child & Adolescent Therapist in Cranston, RI | Jess Devereaux, LMHC">
+<meta property="og:description" content="Child & Adolescent therapy in Cranston, Rhode Island. Anxiety, mood concerns, school stress, emotional regulation. In-person + telehealth.">
+<meta property="og:url" content="https://jessdevereaux.com/">
+<meta property="og:image" content="https://jessdevereaux.com/images/Jess.png">
+<meta name="twitter:card" content="summary_large_image">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Jess Devereaux, LMHC",
+  "url": "https://jessdevereaux.com/",
+  "image": "https://jessdevereaux.com/images/Jess.png",
+  "areaServed": "Rhode Island",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Cranston",
+    "addressRegion": "RI",
+    "addressCountry": "US"
+  }
+}
+</script>
 
 <style>
 :root{
@@ -22,6 +49,8 @@
 
 *{box-sizing:border-box}
 
+html, body{ height:100%; }
+
 body{
   margin:0;
   padding:40px 16px;
@@ -29,21 +58,15 @@ body{
   justify-content:center;
   font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
   color:var(--ink);
-  background:transparent; /* we force background via ::before */
-  position:relative;
-  min-height:100vh;
-}
 
-/* ✅ HARD-FORCED BACKGROUND LAYER (cannot be overridden by other CSS) */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  z-index:-1;
-  background:
-    radial-gradient(900px 520px at 10% 0%, rgba(255,236,229,.70), transparent 62%),
-    radial-gradient(850px 520px at 92% 8%, rgba(255,245,235,.62), transparent 62%),
+  /* Warm blush/cream background */
+  background-image:
+    radial-gradient(900px 520px at 10% 0%, rgba(255,236,229,.80), transparent 62%),
+    radial-gradient(850px 520px at 92% 8%, rgba(255,245,235,.75), transparent 62%),
     linear-gradient(180deg,#fffdfa 0%, #f8f6f4 100%);
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-attachment:fixed;
 }
 
 .container{ width:100%; max-width:1150px; }
@@ -85,7 +108,7 @@ body::before{
 
 .photoWrap{
   flex:0 0 300px;
-  padding:26px;
+  padding:18px;
 }
 
 .photo{
@@ -98,6 +121,19 @@ body::before{
   aspect-ratio:1/1;
   box-shadow:0 18px 50px rgba(15,23,42,.15);
   border:1px solid rgba(148,163,184,.35);
+}
+
+/* Hidden SEO H1 */
+.sr-only{
+  position:absolute !important;
+  width:1px !important;
+  height:1px !important;
+  padding:0 !important;
+  margin:-1px !important;
+  overflow:hidden !important;
+  clip:rect(0,0,0,0) !important;
+  white-space:nowrap !important;
+  border:0 !important;
 }
 
 /* ===== BODY TEXT (Unified serif) ===== */
@@ -251,14 +287,6 @@ a.secondary{
   font-family:Inter, system-ui, sans-serif;
 }
 
-.proof{
-  margin-top:14px;
-  font-size:11px;
-  color:#8a93a3;
-  font-family:Inter, system-ui, sans-serif;
-  text-align:right;
-}
-
 @media (max-width:900px){
   .photoWrap{ flex-basis:260px; }
   .logoImg{ max-height:500px; }
@@ -266,7 +294,7 @@ a.secondary{
 
 @media (max-width:760px){
   .topRow{ flex-wrap:wrap; }
-  .photoWrap{ flex:0 0 240px; padding:20px; }
+  .photoWrap{ flex:0 0 240px; padding:16px; }
   .igGrid{ grid-template-columns:1fr; }
 }
 </style>
@@ -276,14 +304,17 @@ a.secondary{
 <div class="container">
   <div class="card">
 
+    <!-- SEO H1 (hidden, but helps Google understand topic/location) -->
+    <h1 class="sr-only">Child & Adolescent Therapist in Cranston, Rhode Island</h1>
+
     <div class="topRow">
       <div class="logoWrap">
-        <img class="logoImg" src="images/Logo.jpg" alt="Practice logo">
-        <div class="tagline">Child &amp; Adolescent Therapy · Rhode Island</div>
+        <img class="logoImg" src="images/Logo.jpg" alt="Jess Devereaux, Licensed Mental Health Counselor logo">
+        <div class="tagline">Child &amp; Adolescent Therapy · Cranston, Rhode Island</div>
       </div>
 
       <div class="photoWrap">
-        <img class="photo" src="images/Jess.png" alt="Jess Devereaux">
+        <img class="photo" src="images/Jess.png" alt="Jess Devereaux, LMHC">
       </div>
     </div>
 
@@ -300,6 +331,11 @@ a.secondary{
     <p>
       With 13 years of experience as a school counselor, I specialize in anxiety, mood concerns, emotional regulation, and school-related stress.
       My approach integrates CBT, solution-focused strategies, and mindfulness to build resilience and lasting skills.
+    </p>
+
+    <!-- Local line for SEO -->
+    <p>
+      Located in Cranston, Rhode Island, I serve families across Providence County and throughout RI with in-person and telehealth options.
     </p>
 
     <div class="links">
@@ -354,8 +390,6 @@ a.secondary{
       Please do not include sensitive clinical details or crisis information in a web inquiry.
       If you are in crisis, call 988 or your local emergency number.
     </div>
-
-    <div class="proof">JDLMHC-BG-FORCED-PASTEL1-2026-02-23</div>
 
   </div>
 </div>
