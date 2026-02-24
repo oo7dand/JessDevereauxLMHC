@@ -3,14 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- VERSION STAMP (use View Source to confirm you’re seeing the right file) -->
-<meta name="site-version" content="JDLMHC-2026-02-23-vFINAL-PASTEL-SAGE">
+<meta name="site-version" content="JDLMHC-PASTEL-1-2026-02-23">
 
 <title>Jess Devereaux, LMHC</title>
 <meta name="description" content="Child & Adolescent Therapy in Rhode Island. Anxiety, mood concerns, school stress, and emotional growth.">
 
-<!-- CACHE KILLERS -->
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
@@ -20,8 +17,6 @@
 
 <style>
 :root{
-  --bg1:#f9fbfa;
-  --bg2:#eef3f1;
   --ink:#1f2430;
   --muted:#6b7280;
   --accent:#1d4ed8;
@@ -32,19 +27,20 @@
 
 *{box-sizing:border-box}
 
-/* DIFFERENT WAY: apply background to html AND body, and force it with !important */
+/* FIRST PASTEL: soft blush + cream glow (warm/welcoming)
+   Applied to HTML (body transparent) so it *always* shows. */
 html{
   min-height:100%;
   background:
-    radial-gradient(1000px 600px at 15% 0%, rgba(226,236,231,.70), transparent 65%),
-    radial-gradient(900px 500px at 85% 10%, rgba(240,245,242,.65), transparent 65%),
-    linear-gradient(180deg,var(--bg1) 0%, var(--bg2) 100%) !important;
+    radial-gradient(900px 520px at 10% 0%, rgba(255,236,229,.70), transparent 62%),
+    radial-gradient(850px 520px at 92% 8%, rgba(255,245,235,.62), transparent 62%),
+    linear-gradient(180deg,#fffdfa 0%, #f8f6f4 100%) !important;
 }
 
 body{
   margin:0;
   min-height:100%;
-  background:transparent !important; /* uses html background */
+  background:transparent !important;
   padding:40px 16px;
   display:flex;
   justify-content:center;
@@ -82,7 +78,7 @@ body{
   height:auto;
   display:block;
   object-fit:contain;
-  max-height:560px; /* bigger logo */
+  max-height:560px;
 }
 
 .tagline{
@@ -94,7 +90,7 @@ body{
 
 .photoWrap{
   flex:0 0 300px;
-  padding:26px; /* portrait further from border */
+  padding:26px;
 }
 
 .photo{
@@ -175,9 +171,7 @@ a.secondary{
 }
 
 /* ===== Instagram ===== */
-.section{
-  margin-top:42px;
-}
+.section{ margin-top:42px; }
 
 .sectionHeader{
   display:flex;
@@ -262,7 +256,6 @@ a.secondary{
   font-family:Inter, system-ui, sans-serif;
 }
 
-/* Small “proof” badge so you can visually confirm changes */
 .proof{
   margin-top:14px;
   font-size:11px;
@@ -369,13 +362,13 @@ a.secondary{
       If you are in crisis, call 988 or your local emergency number.
     </div>
 
-    <div class="proof">JDLMHC-2026-02-23-vFINAL-PASTEL-SAGE</div>
+    <div class="proof">JDLMHC-PASTEL-1-2026-02-23</div>
 
   </div>
 </div>
 
 <script>
-  // Hide IG tiles if images missing (prevents broken placeholders)
+  // Hide IG tiles if images missing
   document.querySelectorAll('.igTile img').forEach(img => {
     img.addEventListener('error', () => {
       const tile = img.closest('.igTile');
